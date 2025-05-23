@@ -23,7 +23,7 @@ const features = [
     icon: <TrendingUp className="w-10 h-10 text-primary" />,
     title: "Crecimiento en Copaelot",
     description: "Mejora tu ROAS, optimiza el UX/UI, Transforma tu canal en un producto con nuevas ideas de funcionalidades.",
-    link: "/services#crecimiento-copaelot"
+    link: "/services#crecimiento-copaelot" // Ensure this ID matches an ID on the services page if you want direct linking
   },
   {
     icon: <Zap className="w-10 h-10 text-primary" />,
@@ -41,7 +41,7 @@ const features = [
 
 export function ServicesCarouselSection() {
   return (
-    <section className="py-16 md:py-24 bg-background overflow-hidden">
+    <section className="py-16 md:py-24 bg-background"> {/* Removed overflow-hidden */}
       <div className="container mx-auto px-4 md:px-6">
         {/* Two-column grid for sticky left text and scrolling right content */}
         <div className="md:grid md:grid-cols-12 md:gap-8 lg:gap-12 items-start">
@@ -70,14 +70,14 @@ export function ServicesCarouselSection() {
                 Descubre cómo nuestras soluciones de inteligencia artificial pueden revolucionar tu negocio, optimizar procesos y crear experiencias de cliente inolvidables.
               </p>
             </AnimatedOnScroll>
-
+            
             {/* Card Carousel - NOW INSIDE THE RIGHT SCROLLING COLUMN */}
             <AnimatedOnScroll animation="fadeInUp" delay={200}>
               <div className="flex overflow-x-auto space-x-6 sm:space-x-8 md:space-x-8 lg:space-x-10 pb-8 pt-2 scrollbar-hide snap-x snap-mandatory items-stretch -mx-4 px-4 md:-mx-6 md:px-6">
                 {features.map((feature, index) => (
                   <div 
                     key={feature.title} 
-                    className="flex-none snap-center w-[85%] sm:w-[70%] md:w-[calc(50%-theme(spacing.3))] lg:w-[calc(33.333%-theme(spacing.4))]"
+                    className="flex-none snap-center w-[85%] sm:w-[70%] md:w-[46%] lg:w-[40%]"
                   >
                     <AnimatedOnScroll animation="scaleUp" delay={index * 100} className="h-full">
                       <Card className="h-full flex flex-col hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 border-border hover:border-primary/50">
