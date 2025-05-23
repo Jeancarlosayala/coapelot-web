@@ -29,9 +29,12 @@ export function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button 
-          variant="outline" 
-          className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary hover:bg-neutral-50 border-neutral-300 focus-visible:ring-1 focus-visible:ring-ring h-10" // Matched height with other nav items
+        <Button
+          variant="ghost" // Changed from outline to ghost
+          className={cn(
+            "flex items-center space-x-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary hover:bg-transparent focus-visible:ring-1 focus-visible:ring-ring h-10", // Removed border, bg-neutral-50 on hover, added hover:bg-transparent
+            "focus-visible:ring-offset-0" // Ensure focus ring is clear if needed
+          )}
         >
           <span className="text-lg" aria-hidden="true">{selectedLanguage.flagEmoji}</span>
           <span>{selectedLanguage.name}</span>
@@ -45,8 +48,8 @@ export function LanguageSwitcher() {
             onSelect={() => setSelectedLanguage(lang)}
             className={cn(
               "flex items-center space-x-3 cursor-pointer px-3 py-2 text-sm",
-              selectedLanguage.code === lang.code 
-                ? "bg-neutral-100 text-primary font-semibold" 
+              selectedLanguage.code === lang.code
+                ? "bg-neutral-100 text-primary font-semibold"
                 : "text-neutral-700 hover:bg-neutral-100"
             )}
           >
