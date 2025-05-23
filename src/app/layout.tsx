@@ -41,7 +41,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <Navbar />
-        <main className="flex-grow container mx-auto">
+        <main className="flex-grow"> {/* Removed container and mx-auto */}
           {children}
         </main>
         <Footer />
