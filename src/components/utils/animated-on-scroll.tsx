@@ -25,55 +25,54 @@ const AnimatedOnScroll: React.FC<AnimatedOnScrollProps> = ({
   threshold = 0.1,
   triggerOnce = true,
   as: Component = 'div',
-  staggerChildren, // Not directly used here, parent needs to manage this if wrapping multiple
+  staggerChildren, 
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // setIsVisible(true) will be triggered by timeout
-            if (triggerOnce && ref.current) {
-              observer.unobserve(ref.current);
-            }
-          } else {
-            if (!triggerOnce) {
-              setIsVisible(false);
-            }
-          }
-        });
-      },
-      { threshold }
-    );
-    
-    let timeoutId: NodeJS.Timeout;
-    const currentRef = ref.current;
-
-    if (currentRef) {
-      // Check initial visibility without timeout if already in view
-      const rect = currentRef.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom >= 0) {
-         timeoutId = setTimeout(() => setIsVisible(true), delay);
-      } else {
-        observer.observe(currentRef);
-      }
+    const targetRef = ref.current;
+    if (!targetRef) {
+      return;
     }
-    
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-      if (timeoutId) {
-        clearTimeout(timeoutId);
+
+    let animationTimeoutId: NodeJS.Timeout | null = null;
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      const entry = entries[0]; 
+
+      if (entry.isIntersecting) {
+        if (!isVisible) { // Only trigger if not already visible
+          animationTimeoutId = setTimeout(() => {
+            setIsVisible(true);
+            if (triggerOnce) {
+              observer.unobserve(targetRef);
+            }
+          }, delay);
+        }
+      } else {
+        // Element is out of view
+        if (animationTimeoutId) {
+          clearTimeout(animationTimeoutId);
+          animationTimeoutId = null;
+        }
+        if (!triggerOnce && isVisible) { // Only hide if not triggerOnce and it was visible
+          setIsVisible(false);
+        }
       }
     };
-  }, [delay, threshold, triggerOnce]);
 
+    const observer = new IntersectionObserver(observerCallback, { threshold });
+    observer.observe(targetRef);
 
-  // Base styles for animation (invisible state)
+    return () => {
+      observer.disconnect(); 
+      if (animationTimeoutId) {
+        clearTimeout(animationTimeoutId);
+      }
+    };
+  }, [delay, threshold, triggerOnce, isVisible]); // isVisible is in the dependency array
+
   const baseAnimationStyles: Record<AnimationType, string> = {
     fadeIn: 'opacity-0',
     fadeInUp: 'opacity-0 translate-y-8',
@@ -83,7 +82,6 @@ const AnimatedOnScroll: React.FC<AnimatedOnScrollProps> = ({
     zoomIn: 'opacity-0 scale-90',
   };
 
-  // Styles for when element is visible
   const visibleAnimationStyles: Record<AnimationType, string> = {
     fadeIn: 'opacity-100',
     fadeInUp: 'opacity-100 translate-y-0',
@@ -93,16 +91,16 @@ const AnimatedOnScroll: React.FC<AnimatedOnScrollProps> = ({
     zoomIn: 'opacity-100 scale-100',
   };
   
-  const transitionProperty = 'all'; // Could be more specific: 'opacity, transform'
+  const transitionProperty = 'opacity, transform'; // Be more specific
 
   return (
     <Component
       ref={ref}
-      style={{ transitionDuration: `${duration}ms`, transitionDelay: `${delay}ms`, transitionProperty }}
+      style={{ transitionDuration: `${duration}ms`, transitionDelay: `0ms`, transitionProperty }} // Delay is handled by setTimeout now for visibility
       className={cn(
-        'transition-all ease-out', // General transition class
-        baseAnimationStyles[animation], // Initial animation state
-        isVisible && visibleAnimationStyles[animation], // Visible state
+        'transition-all ease-out', 
+        baseAnimationStyles[animation], 
+        isVisible && visibleAnimationStyles[animation], 
         className
       )}
     >
