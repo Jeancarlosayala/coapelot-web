@@ -22,7 +22,7 @@ export function OurValuesSection() {
           {/* Left Sticky Column */}
           <div className="md:sticky md:top-24 h-fit self-start mb-12 md:mb-0">
             <AnimatedOnScroll animation="fadeInLeft">
-              <div> {/* Wrapper div added here */}
+              <div>
                 <div className="mb-3">
                   <div className="w-10 h-0.5 bg-primary mb-1"></div>
                   <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
@@ -39,12 +39,12 @@ export function OurValuesSection() {
           {/* Right Scrolling Column */}
           <div className="space-y-10 md:space-y-12">
             <AnimatedOnScroll animation="fadeInUp">
-              <p className="text-[1.625rem] leading-relaxed text-muted-foreground"> {/* Adjusted font size and added leading-relaxed for better readability */}
+              <p className="text-[1.625rem] leading-relaxed text-muted-foreground">
                 Más que IA, una nueva forma de trabajar. Nuestros valores definen cada solución:
               </p>
             </AnimatedOnScroll>
             
-            <div className="space-y-8">
+            <div className="space-y-16"> {/* Changed from space-y-8 to space-y-16 */}
               {valuesData.map((value, index) => (
                 <AnimatedOnScroll 
                   key={value.title} 
