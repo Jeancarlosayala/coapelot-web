@@ -2,7 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react'; // Added MessageCircle for potential icon
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { navLinks, type NavLinkGroup, type NavLinkItem } from './nav-links';
@@ -15,7 +15,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { LanguageSwitcher } from '@/components/layout/language-switcher'; // Added import
+import { LanguageSwitcher } from '@/components/layout/language-switcher';
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -175,7 +175,7 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Logo />
         
-        {/* Desktop Navigation and Language Switcher */}
+        {/* Desktop Navigation, Language Switcher, and CTA Button */}
         <div className="hidden md:flex items-center space-x-4">
           <nav className="flex items-center space-x-6">
             {navLinks.map((link) => (
@@ -183,10 +183,24 @@ export function Navbar() {
             ))}
           </nav>
           <LanguageSwitcher />
+          <Button asChild size="default" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Link href="/ai-agent">
+              CHAT AIJOLOT AI 
+              {/* Replace this span with your actual emoji image if needed */}
+              <span role="img" aria-label="chat emoji" className="ml-2">💬</span> 
+            </Link>
+          </Button>
         </div>
 
         {/* Mobile Menu Trigger */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center">
+          <Button asChild size="sm" variant="outline" className="mr-2 border-primary text-primary hover:bg-primary/10">
+            <Link href="/ai-agent">
+              CHAT AI 
+              {/* Replace this span with your actual emoji image if needed */}
+              <span role="img" aria-label="chat emoji" className="ml-1 text-xs">💬</span>
+            </Link>
+          </Button>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="text-neutral-700 hover:text-primary">
@@ -210,9 +224,17 @@ export function Navbar() {
                     </div>
                   ))}
                 </nav>
-                <div className="p-6 mt-auto border-t border-neutral-200"> {/* Lang switcher at bottom */}
-                  <p className="mb-2 text-xs text-neutral-600 font-medium">Idioma</p>
-                  <LanguageSwitcher />
+                <div className="p-6 space-y-4 mt-auto border-t border-neutral-200"> {/* CTA and Lang switcher at bottom */}
+                  <Button asChild size="default" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                    <Link href="/ai-agent" onClick={() => setIsMobileMenuOpen(false)}>
+                      CHAT AIJOLOT AI
+                      <span role="img" aria-label="chat emoji" className="ml-2">💬</span>
+                    </Link>
+                  </Button>
+                  <div>
+                    <p className="mb-2 text-xs text-neutral-600 font-medium">Idioma</p>
+                    <LanguageSwitcher />
+                  </div>
                 </div>
               </div>
             </SheetContent>
