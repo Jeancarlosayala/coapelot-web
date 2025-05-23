@@ -69,11 +69,11 @@ export function ServicesCarouselSection() {
 
             {/* Cards Horizontal Scroll Container */}
             <AnimatedOnScroll animation="fadeInUp" delay={200}>
-              <div className="flex overflow-x-auto space-x-4 sm:space-x-6 pb-8 pt-2 scrollbar-hide snap-x snap-mandatory items-stretch -mx-4 px-4 md:-mx-6 md:px-6"> {/* Negative margin + padding trick for full-bleed scroll on mobile */}
+              <div className="flex overflow-x-auto space-x-6 sm:space-x-8 md:space-x-8 lg:space-x-10 pb-8 pt-2 scrollbar-hide snap-x snap-mandatory items-stretch -mx-4 px-4 md:-mx-6 md:px-6"> {/* Negative margin + padding trick for full-bleed scroll on mobile */}
                 {features.map((feature, index) => (
                   <div 
                     key={feature.title} 
-                    className="flex-none snap-center w-[85%] sm:w-[70%] md:w-[calc(50%-theme(spacing.3))] lg:w-[calc(33.333%-theme(spacing.4))]"
+                    className="flex-none snap-center w-[85%] sm:w-[70%] md:w-[46%] lg:w-[40%]" // Adjusted card widths
                   >
                     <AnimatedOnScroll animation="scaleUp" delay={index * 100} className="h-full">
                       <Card className="h-full flex flex-col hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 border-border hover:border-primary/50">
