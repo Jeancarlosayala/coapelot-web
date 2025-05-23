@@ -13,9 +13,9 @@ export function Logo() {
         data-ai-hint="company logo vertical"
       />
       <span className="font-semibold uppercase">
-        <span className="text-sky-400">COP</span>
+        <span className="text-background">COP</span>
         <span className="text-primary">AE</span>
-        <span className="text-sky-400">LOT</span>
+        <span className="text-background">LOT</span>
       </span>
     </Link>
   );
