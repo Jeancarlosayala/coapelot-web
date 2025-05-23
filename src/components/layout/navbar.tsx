@@ -31,16 +31,13 @@ export function Navbar() {
       isMobile && "py-2 block w-full text-left"
     );
     
-    // Adjusted dropdownTriggerClasses for clarity - now mostly specific to mobile AccordionTrigger
-    // For desktop, DropdownMenuTrigger styling is handled in NavListItem
-
     if (isMobile && link.isDropdown && link.subLinks) {
       return (
         <Accordion type="single" collapsible className="w-full" key={link.label}>
           <AccordionItem value={link.label} className="border-none">
             <AccordionTrigger className={cn(
-              "flex items-center justify-between w-full py-2 text-left text-sm font-medium text-neutral-700 transition-colors",
-              "hover:no-underline hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+              "flex items-center justify-between w-full py-2 px-0 text-left text-sm font-medium text-neutral-700 transition-colors",
+              "hover:no-underline hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hover:text-primary" 
               // ChevronDown icon is part of AccordionTrigger and styled by it.
             )}>
               {link.label}
@@ -71,8 +68,6 @@ export function Navbar() {
     // Original Dropdown for desktop (within NavListItem) or simple links for mobile
     if (link.isDropdown && link.subLinks && !isMobile) {
       // Desktop dropdown logic is handled by NavListItem
-      // This path shouldn't be hit if isMobile is true and it's a dropdown due to above block
-      // Fallback or error needed if this condition is met unexpectedly
       return null; 
     }
 
@@ -97,6 +92,8 @@ export function Navbar() {
     const dropdownTriggerClasses = cn(
       "flex items-center",
       commonLinkClasses,
+      // Remove focus ring for dropdown trigger
+      "focus-visible:ring-0 focus-visible:ring-offset-0 outline-none focus:outline-none"
     );
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -136,7 +133,7 @@ export function Navbar() {
                 variant="ghost" 
                 className={cn(
                   dropdownTriggerClasses, 
-                  "p-0 hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 outline-none focus:outline-none"
+                  "p-0 hover:bg-transparent" // Ensure ghost variant styles apply
                 )}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -161,7 +158,6 @@ export function Navbar() {
                   )}
                   onClick={() => {
                     setIsDropdownOpen(false);
-                    // setIsMobileMenuOpen(false); // Not needed here as this is desktop
                   }}
                 >
                   {subLink.label}
@@ -176,7 +172,6 @@ export function Navbar() {
        <Link
         href={link.href!}
         className={commonLinkClasses}
-        // onClick={() => setIsMobileMenuOpen(false)} // Not needed here as this is desktop
       >
         {link.label}
       </Link>
@@ -230,15 +225,15 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs bg-white p-0 border-l border-neutral-200">
-              <SheetHeader className="p-6 pt-5 pb-5 flex flex-row items-center justify-between border-b border-neutral-200">
+              <SheetHeader className="px-6 pt-2 pb-5 flex flex-row items-center justify-between border-b border-neutral-200">
                 <Logo />
-                <SheetTitle className="sr-only">Main Menu</SheetTitle> {}
+                <SheetTitle className="sr-only">Main Menu</SheetTitle>
                 <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)} className="-mr-2 text-neutral-700 md:hover:text-primary">
                   <X className="h-6 w-6" />
                   <span className="sr-only">Close menu</span>
                 </Button>
               </SheetHeader>
-              <div className="flex flex-col h-[calc(100%-theme(spacing.28))]"> {/* Adjusted height for header */}
+              <div className="flex flex-col h-[calc(100%-theme(spacing.28))]"> {}
                 <nav className="flex-grow p-6 pt-2 space-y-0 overflow-y-auto">
                   {navLinks.map((link) => (
                     <div key={link.label} className="border-b border-neutral-100 last:border-b-0">
