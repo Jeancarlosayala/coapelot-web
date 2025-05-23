@@ -22,15 +22,15 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Handles mobile navigation rendering (remains click-to-open for dropdowns)
+  // Handles mobile navigation rendering
   const renderNavItem = (link: NavLinkGroup, isMobile: boolean = false) => {
     const commonLinkClasses = cn(
       "text-sm font-medium transition-colors",
-      pathname === link.href ? "text-primary" : "text-neutral-700 hover:text-primary",
+      pathname === link.href ? "text-primary" : "text-neutral-700 md:hover:text-primary", // Hover effect only on md+
       isMobile && "py-2 block w-full text-left"
     );
     const dropdownTriggerClasses = cn(
-      "flex items-center",
+      "flex items-center", // This should ensure vertical alignment
       commonLinkClasses,
       isMobile ? "" : "px-0 py-0" 
     );
@@ -39,7 +39,15 @@ export function Navbar() {
       return (
         <DropdownMenu key={link.label}>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className={cn(dropdownTriggerClasses, "w-full justify-start", isMobile ? "px-0" : "")}>
+            <Button 
+              variant="ghost" 
+              className={cn(
+                dropdownTriggerClasses, 
+                "w-full justify-start", 
+                // For mobile: remove default button padding-x, disable hover bg
+                isMobile ? "px-0 hover:bg-transparent" : "" 
+              )}
+            >
               {link.label}
               <ChevronDown className="ml-auto h-4 w-4" />
             </Button>
@@ -214,29 +222,29 @@ export function Navbar() {
           </Button>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-neutral-700 hover:text-primary">
+              <Button variant="ghost" size="icon" className="text-neutral-700 md:hover:text-primary">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs bg-white p-0 border-l border-neutral-200">
-              <SheetHeader className="p-6 pt-5 pb-5 mb-0 flex flex-row items-center justify-between border-b border-neutral-200"> {/* Updated to flex-row for header layout */}
+              <SheetHeader className="p-6 pt-5 pb-5 mb-0 flex flex-row items-center justify-between border-b border-neutral-200">
                 <Logo />
-                <SheetTitle className="sr-only">Main Menu</SheetTitle> {/* Visually hidden title */}
-                <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)} className="-mr-2 text-neutral-700 hover:text-primary">
+                <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)} className="-mr-2 text-neutral-700 md:hover:text-primary">
                   <X className="h-6 w-6" />
                   <span className="sr-only">Close menu</span>
                 </Button>
               </SheetHeader>
-              <div className="flex flex-col h-[calc(100%-theme(spacing.16))]"> {/* Adjust height to account for header */}
-                <nav className="flex-grow p-6 space-y-1 overflow-y-auto"> {/* Nav links scrollable */}
+              <div className="flex flex-col h-[calc(100%-theme(spacing.16))]">
+                <nav className="flex-grow p-6 space-y-1 overflow-y-auto">
                   {navLinks.map((link) => (
                     <div key={link.label} className="py-1 border-b border-neutral-100 last:border-b-0">
                       {renderNavItem(link, true)}
                     </div>
                   ))}
                 </nav>
-                <div className="p-6 space-y-4 mt-auto border-t border-neutral-200"> {/* CTA and Lang switcher at bottom */}
+                <div className="p-6 space-y-4 mt-auto border-t border-neutral-200">
                   <Button asChild size="default" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                     <Link href="/ai-agent" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-center">
                       CHAT AIJOLOT AI
