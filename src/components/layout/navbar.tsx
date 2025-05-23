@@ -1,8 +1,9 @@
 
 'use client';
 import Link from 'next/link';
+import Image from 'next/image'; // Added import for next/image
 import { useState, useRef, useEffect } from 'react';
-import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react'; // Added MessageCircle for potential icon
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { navLinks, type NavLinkGroup, type NavLinkItem } from './nav-links';
@@ -186,19 +187,29 @@ export function Navbar() {
           <Button asChild size="default" className="bg-primary hover:bg-primary/90 text-primary-foreground">
             <Link href="/ai-agent">
               CHAT AIJOLOT AI 
-              {/* Replace this span with your actual emoji image if needed */}
-              <span role="img" aria-label="chat emoji" className="ml-2">💬</span> 
+              <Image 
+                src="/chat_emoji.png" 
+                alt="Chat Emoji" 
+                width={20} 
+                height={20} 
+                className="ml-2" 
+              />
             </Link>
           </Button>
         </div>
 
         {/* Mobile Menu Trigger */}
         <div className="md:hidden flex items-center">
-          <Button asChild size="sm" variant="outline" className="mr-2 border-primary text-primary hover:bg-primary/10">
-            <Link href="/ai-agent">
+          <Button asChild size="sm" variant="outline" className="mr-2 border-primary text-primary hover:bg-primary/10 px-2">
+            <Link href="/ai-agent" className="flex items-center">
               CHAT AI 
-              {/* Replace this span with your actual emoji image if needed */}
-              <span role="img" aria-label="chat emoji" className="ml-1 text-xs">💬</span>
+              <Image 
+                src="/chat_emoji.png" 
+                alt="Chat Emoji" 
+                width={16} 
+                height={16} 
+                className="ml-1" 
+              />
             </Link>
           </Button>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -226,9 +237,15 @@ export function Navbar() {
                 </nav>
                 <div className="p-6 space-y-4 mt-auto border-t border-neutral-200"> {/* CTA and Lang switcher at bottom */}
                   <Button asChild size="default" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                    <Link href="/ai-agent" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link href="/ai-agent" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-center">
                       CHAT AIJOLOT AI
-                      <span role="img" aria-label="chat emoji" className="ml-2">💬</span>
+                       <Image 
+                        src="/chat_emoji.png" 
+                        alt="Chat Emoji" 
+                        width={20} 
+                        height={20} 
+                        className="ml-2" 
+                      />
                     </Link>
                   </Button>
                   <div>
