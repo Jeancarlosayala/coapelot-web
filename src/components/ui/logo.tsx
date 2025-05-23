@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center text-2xl font-sora text-foreground hover:text-foreground/80 transition-colors">
+    <Link href="/" className="flex items-center text-2xl font-sora text-background hover:text-background/80 transition-colors">
       <Image
         src="/logo_copaelot.png" // Make sure logo_copaelot.png is in your /public folder
         alt="Copaelot Ideogram"

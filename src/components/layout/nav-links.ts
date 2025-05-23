@@ -1,14 +1,25 @@
-export type NavLink = {
+export type NavLinkItem = {
   href: string;
   label: string;
 };
 
-export const navLinks: NavLink[] = [
-  { href: '/', label: 'Home' },
+export type NavLinkGroup = {
+  label: string;
+  href?: string; // Used for top-level links that are not dropdowns
+  isDropdown?: boolean;
+  subLinks?: NavLinkItem[];
+};
+
+export const navLinks: NavLinkGroup[] = [
+  { href: '/', label: 'Inicio' },
   { href: '/services', label: 'Servicios IA' },
-  { href: '/how-we-start', label: 'Cómo Empezamos' },
-  { href: '/about', label: 'Nosotros' },
-  { href: '/blog', label: 'Recursos/Blog' },
-  { href: '/contact', label: 'Contacto' },
-  { href: '/ai-agent', label: 'Leo IA (Aijolot)' },
+  {
+    label: 'Acerca de',
+    isDropdown: true,
+    subLinks: [
+      { href: '/about', label: 'Nosotros' },
+      { href: '/contact', label: 'Contacto' },
+      { href: '/blog', label: 'Recursos' }, // Changed from "Recursos/Blog" to "Recursos" for dropdown
+    ],
+  },
 ];
