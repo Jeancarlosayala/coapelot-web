@@ -1,6 +1,7 @@
+
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -19,6 +20,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Handles mobile navigation rendering (remains click-to-open for dropdowns)
   const renderNavItem = (link: NavLinkGroup, isMobile: boolean = false) => {
     const commonLinkClasses = cn(
       "text-sm font-medium transition-colors",
@@ -28,28 +30,26 @@ export function Navbar() {
     const dropdownTriggerClasses = cn(
       "flex items-center",
       commonLinkClasses,
-      isMobile ? "" : "px-0 py-0" // Remove button padding for desktop dropdown trigger
+      isMobile ? "" : "px-0 py-0" 
     );
-
 
     if (link.isDropdown && link.subLinks) {
       return (
         <DropdownMenu key={link.label}>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className={dropdownTriggerClasses}>
+            <Button variant="ghost" className={cn(dropdownTriggerClasses, "w-full justify-start", isMobile ? "px-0" : "")}>
               {link.label}
-              <ChevronDown className="ml-1 h-4 w-4" />
+              <ChevronDown className="ml-auto h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-white w-56">
+          <DropdownMenuContent className="bg-white w-56 border-neutral-200 shadow-lg">
             {link.subLinks.map((subLink) => (
-              <DropdownMenuItem key={subLink.href} asChild className="focus:bg-neutral-100">
+              <DropdownMenuItem key={subLink.href} asChild className="focus:bg-neutral-100 cursor-pointer">
                 <Link
                   href={subLink.href}
                   className={cn(
-                    "block px-4 py-2 text-sm",
-                     pathname === subLink.href ? "text-primary font-semibold" : "text-neutral-700 hover:text-primary",
-                     "hover:bg-neutral-50" // Consistent hover for dropdown items
+                    "block px-4 py-2 text-sm w-full",
+                     pathname === subLink.href ? "text-primary font-semibold bg-neutral-50" : "text-neutral-700 hover:text-primary hover:bg-neutral-50"
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -74,26 +74,70 @@ export function Navbar() {
     );
   };
   
+  // Handles desktop navigation rendering
   const NavListItem = ({ link }: { link: NavLinkGroup}) => {
     const commonLinkClasses = cn(
       "text-sm font-medium transition-colors",
       pathname === link.href ? "text-primary" : "text-neutral-700 hover:text-primary"
     );
-     const dropdownTriggerClasses = cn(
+    const dropdownTriggerClasses = cn(
       "flex items-center",
       commonLinkClasses,
     );
 
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    const handleMouseEnter = () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+      setIsDropdownOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+      hoverTimeoutRef.current = setTimeout(() => {
+        setIsDropdownOpen(false);
+      }, 150); // Delay to allow moving cursor to content
+    };
+    
+    const handleContentMouseEnter = () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+
+    const handleContentMouseLeave = () => {
+       hoverTimeoutRef.current = setTimeout(() => {
+        setIsDropdownOpen(false);
+      }, 150);
+    };
+
+
     if (link.isDropdown && link.subLinks) {
       return (
-        <DropdownMenu>
+        <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
           <DropdownMenuTrigger asChild>
-             <Button variant="ghost" className={cn(dropdownTriggerClasses, "p-0 hover:bg-transparent")}> {/* Adjusted for desktop */}
+             <Button 
+                variant="ghost" 
+                className={cn(
+                  dropdownTriggerClasses, 
+                  "p-0 hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 outline-none focus:outline-none"
+                )}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                // onClick={() => setIsDropdownOpen(!isDropdownOpen)} // Retain click for accessibility
+                aria-expanded={isDropdownOpen}
+              >
               {link.label}
               <ChevronDown className="ml-1 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-white w-56 border-neutral-200 shadow-lg">
+          <DropdownMenuContent 
+            className="bg-white w-56 border-neutral-200 shadow-lg"
+            onMouseEnter={handleContentMouseEnter}
+            onMouseLeave={handleContentMouseLeave}
+          >
             {link.subLinks.map((subLink) => (
               <DropdownMenuItem key={subLink.href} asChild className="focus:bg-neutral-100 cursor-pointer">
                 <Link
@@ -102,7 +146,10 @@ export function Navbar() {
                     "block px-4 py-2 text-sm w-full",
                      pathname === subLink.href ? "text-primary font-semibold bg-neutral-50" : "text-neutral-700 hover:text-primary hover:bg-neutral-50"
                   )}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    setIsMobileMenuOpen(false); // Also close mobile menu if link is clicked from there (though this component is desktop)
+                  }}
                 >
                   {subLink.label}
                 </Link>
@@ -122,7 +169,6 @@ export function Navbar() {
       </Link>
     );
   }
-
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white">
@@ -149,9 +195,9 @@ export function Navbar() {
                   <span className="sr-only">Close menu</span>
                 </Button>
               </div>
-              <nav className="flex flex-col space-y-2">
+              <nav className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
-                  <div key={link.label} className="py-1">
+                  <div key={link.label} className="py-1 border-b border-neutral-100 last:border-b-0">
                     {renderNavItem(link, true)}
                   </div>
                 ))}
