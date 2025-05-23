@@ -1,87 +1,20 @@
 
 import { HeroSection } from '@/components/hero-section';
 import { OurValuesSection } from '@/components/sections/our-values-section';
+import { ServicesCarouselSection } from '@/components/sections/services-carousel-section'; // New import
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import AnimatedOnScroll from '@/components/utils/animated-on-scroll';
-import { ArrowRight, Bot, BrainCircuit, Lightbulb, Zap } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const features = [
-  {
-    icon: <Bot className="w-10 h-10 text-primary" />,
-    title: "Agentes IA Avanzados",
-    description: "Automatiza ventas y mejora la experiencia del cliente con IA conversacional.",
-    link: "/services#agentes-ia"
-  },
-  {
-    icon: <BrainCircuit className="w-10 h-10 text-primary" />,
-    title: "Inteligencia de Negocio",
-    description: "Toma decisiones estratégicas basadas en datos con análisis predictivos y dashboards IA.",
-    link: "/services#inteligencia-negocio"
-  },
-  {
-    icon: <Zap className="w-10 h-10 text-primary" />,
-    title: "Contenido Inteligente",
-    description: "Genera contenido personalizado y optimizado para SEO con GenAI, impulsando tu alcance.",
-    link: "/services#contenido-inteligente"
-  },
-  {
-    icon: <Lightbulb className="w-10 h-10 text-primary" />,
-    title: "Innovación a Medida",
-    description: "Desarrollamos soluciones IA únicas para tus desafíos específicos de eCommerce.",
-    link: "/services#innovacion-ia"
-  }
-];
+// Features data has been moved to ServicesCarouselSection
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <OurValuesSection />
-
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <AnimatedOnScroll animation="fadeInUp">
-            <div className="mb-3 text-center"> {/* Centered the chapter tag */}
-              <div className="inline-block w-10 h-0.5 bg-primary mb-1"></div>
-              <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                CAPÍTULO 03: Nuestros Servicios
-              </p>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-center mb-4">
-              Transforma tu eCommerce con IA
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-12">
-              Descubre cómo nuestras soluciones de inteligencia artificial pueden revolucionar tu negocio, optimizar procesos y crear experiencias de cliente inolvidables.
-            </p>
-          </AnimatedOnScroll>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <AnimatedOnScroll key={feature.title} animation="fadeInUp" delay={index * 150}>
-                <Card className="h-full flex flex-col hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 border-border hover:border-primary/50">
-                  <CardHeader className="items-center text-center">
-                    <div className="p-3 rounded-full bg-primary/10 mb-4">
-                      {feature.icon}
-                    </div>
-                    <CardTitle className="font-sora text-xl">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow text-center">
-                    <CardDescription>{feature.description}</CardDescription>
-                  </CardContent>
-                  <div className="p-6 pt-0 text-center">
-                     <Button variant="link" asChild className="text-primary hover:text-primary/80">
-                        <Link href={feature.link}>Saber más <ArrowRight className="ml-2 h-4 w-4"/></Link>
-                     </Button>
-                  </div>
-                </Card>
-              </AnimatedOnScroll>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServicesCarouselSection /> {/* New section component */}
 
       <section className="py-16 md:py-24 bg-slate-800/20 dark:bg-card">
         <div className="container mx-auto px-4 md:px-6">
