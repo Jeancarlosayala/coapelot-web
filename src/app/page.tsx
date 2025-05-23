@@ -44,6 +44,12 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedOnScroll animation="fadeInUp">
+            <div className="mb-3 text-center"> {/* Centered the chapter tag */}
+              <div className="inline-block w-10 h-0.5 bg-primary mb-1"></div>
+              <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                CAPÍTULO 03: Nuestros Servicios
+              </p>
+            </div>
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-center mb-4">
               Transforma tu eCommerce con IA
             </h2>
