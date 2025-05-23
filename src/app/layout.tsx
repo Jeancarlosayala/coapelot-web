@@ -36,7 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head />
-      <body className={`${sora.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}>
+      <body 
+        className={`${sora.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}
+        suppressHydrationWarning={true}
+      >
         <Navbar />
         <main className="flex-grow container mx-auto">
           {children}
