@@ -36,8 +36,8 @@ export function Navbar() {
         <Accordion type="single" collapsible className="w-full" key={link.label}>
           <AccordionItem value={link.label} className="border-none">
             <AccordionTrigger className={cn(
-              "flex items-center justify-between w-full py-2 px-0 text-left text-sm font-medium text-neutral-700 transition-colors",
-              "hover:no-underline hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hover:text-primary" 
+              "flex items-center justify-between w-full py-2 px-0 text-left text-sm font-medium text-neutral-700 transition-colors hover:bg-transparent",
+              "hover:no-underline md:hover:text-primary focus-visible:ring-0 focus-visible:ring-offset-0" 
               // ChevronDown icon is part of AccordionTrigger and styled by it.
             )}>
               {link.label}
@@ -228,10 +228,7 @@ export function Navbar() {
               <SheetHeader className="px-6 pt-2 pb-5 flex flex-row items-center justify-between border-b border-neutral-200">
                 <Logo />
                 <SheetTitle className="sr-only">Main Menu</SheetTitle>
-                <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)} className="-mr-2 text-neutral-700 md:hover:text-primary">
-                  <X className="h-6 w-6" />
-                  <span className="sr-only">Close menu</span>
-                </Button>
+                {/* The explicit X button was removed here as SheetContent provides one by default */}
               </SheetHeader>
               <div className="flex flex-col h-[calc(100%-theme(spacing.28))]"> {}
                 <nav className="flex-grow p-6 pt-2 space-y-0 overflow-y-auto">
