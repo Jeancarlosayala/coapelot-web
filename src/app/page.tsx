@@ -1,5 +1,6 @@
 
 import { HeroSection } from '@/components/hero-section';
+import { OurValuesSection } from '@/components/sections/our-values-section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import AnimatedOnScroll from '@/components/utils/animated-on-scroll';
@@ -38,6 +39,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <OurValuesSection />
 
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">

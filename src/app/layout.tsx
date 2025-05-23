@@ -5,6 +5,7 @@ import './globals.css';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
+import { SmoothScrollProvider } from '@/components/smooth-scroll-provider';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     template: '%s | Aijolot',
   },
   description: 'Transforming eCommerce challenges into opportunities with cutting-edge AI solutions.',
-  icons: { icon: "/favicon.ico" }, // Explicitly point to favicon in public folder
+  icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({
@@ -41,12 +42,14 @@ export default function RootLayout({
         className={`${sora.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}
         suppressHydrationWarning={true}
       >
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-        <Toaster />
+        <SmoothScrollProvider>
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <Toaster />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
