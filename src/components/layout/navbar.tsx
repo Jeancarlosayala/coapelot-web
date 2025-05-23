@@ -15,6 +15,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { LanguageSwitcher } from '@/components/layout/language-switcher'; // Added import
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -126,7 +127,6 @@ export function Navbar() {
                 )}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                // onClick={() => setIsDropdownOpen(!isDropdownOpen)} // Retain click for accessibility
                 aria-expanded={isDropdownOpen}
               >
               {link.label}
@@ -148,7 +148,7 @@ export function Navbar() {
                   )}
                   onClick={() => {
                     setIsDropdownOpen(false);
-                    setIsMobileMenuOpen(false); // Also close mobile menu if link is clicked from there (though this component is desktop)
+                    setIsMobileMenuOpen(false); 
                   }}
                 >
                   {subLink.label}
@@ -174,11 +174,18 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Logo />
-        <nav className="hidden md:flex items-center space-x-6">
-          {navLinks.map((link) => (
-            <NavListItem key={link.label} link={link} />
-          ))}
-        </nav>
+        
+        {/* Desktop Navigation and Language Switcher */}
+        <div className="hidden md:flex items-center space-x-4">
+          <nav className="flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <NavListItem key={link.label} link={link} />
+            ))}
+          </nav>
+          <LanguageSwitcher />
+        </div>
+
+        {/* Mobile Menu Trigger */}
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
@@ -187,21 +194,27 @@ export function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-xs bg-white p-6 border-l border-neutral-200">
-              <div className="mb-6 flex items-center justify-between">
-                <Logo />
-                <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)} className="text-neutral-700 hover:text-primary">
-                  <X className="h-6 w-6" />
-                  <span className="sr-only">Close menu</span>
-                </Button>
+            <SheetContent side="right" className="w-full max-w-xs bg-white p-0 border-l border-neutral-200">
+              <div className="flex flex-col h-full"> {/* Flex column wrapper */}
+                <div className="p-6 pt-5 pb-5 mb-0 flex items-center justify-between border-b border-neutral-200"> {/* Header part */}
+                  <Logo />
+                  <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)} className="-mr-2 text-neutral-700 hover:text-primary">
+                    <X className="h-6 w-6" />
+                    <span className="sr-only">Close menu</span>
+                  </Button>
+                </div>
+                <nav className="flex-grow p-6 space-y-1 overflow-y-auto"> {/* Nav links scrollable */}
+                  {navLinks.map((link) => (
+                    <div key={link.label} className="py-1 border-b border-neutral-100 last:border-b-0">
+                      {renderNavItem(link, true)}
+                    </div>
+                  ))}
+                </nav>
+                <div className="p-6 mt-auto border-t border-neutral-200"> {/* Lang switcher at bottom */}
+                  <p className="mb-2 text-xs text-neutral-600 font-medium">Idioma</p>
+                  <LanguageSwitcher />
+                </div>
               </div>
-              <nav className="flex flex-col space-y-1">
-                {navLinks.map((link) => (
-                  <div key={link.label} className="py-1 border-b border-neutral-100 last:border-b-0">
-                    {renderNavItem(link, true)}
-                  </div>
-                ))}
-              </nav>
             </SheetContent>
           </Sheet>
         </div>
