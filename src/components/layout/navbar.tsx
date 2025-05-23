@@ -5,7 +5,7 @@ import Image from 'next/image'; // Added import for next/image
 import { useState, useRef, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'; // Added SheetHeader, SheetTitle
 import { navLinks, type NavLinkGroup, type NavLinkItem } from './nav-links';
 import { Logo } from '@/components/ui/logo';
 import { usePathname } from 'next/navigation';
@@ -220,14 +220,15 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs bg-white p-0 border-l border-neutral-200">
-              <div className="flex flex-col h-full"> {/* Flex column wrapper */}
-                <div className="p-6 pt-5 pb-5 mb-0 flex items-center justify-between border-b border-neutral-200"> {/* Header part */}
-                  <Logo />
-                  <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)} className="-mr-2 text-neutral-700 hover:text-primary">
-                    <X className="h-6 w-6" />
-                    <span className="sr-only">Close menu</span>
-                  </Button>
-                </div>
+              <SheetHeader className="p-6 pt-5 pb-5 mb-0 flex flex-row items-center justify-between border-b border-neutral-200"> {/* Updated to flex-row for header layout */}
+                <Logo />
+                <SheetTitle className="sr-only">Main Menu</SheetTitle> {/* Visually hidden title */}
+                <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)} className="-mr-2 text-neutral-700 hover:text-primary">
+                  <X className="h-6 w-6" />
+                  <span className="sr-only">Close menu</span>
+                </Button>
+              </SheetHeader>
+              <div className="flex flex-col h-[calc(100%-theme(spacing.16))]"> {/* Adjust height to account for header */}
                 <nav className="flex-grow p-6 space-y-1 overflow-y-auto"> {/* Nav links scrollable */}
                   {navLinks.map((link) => (
                     <div key={link.label} className="py-1 border-b border-neutral-100 last:border-b-0">
