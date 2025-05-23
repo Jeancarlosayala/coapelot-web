@@ -1,3 +1,4 @@
+
 import type {Metadata} from 'next';
 import { Sora, Inter } from 'next/font/google';
 import './globals.css';
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     template: '%s | Aijolot',
   },
   description: 'Transforming eCommerce challenges into opportunities with cutting-edge AI solutions.',
-  // icons: { icon: "/favicon.ico" }, // Favicon not generated
+  icons: { icon: "/favicon.ico" }, // Explicitly point to favicon in public folder
 };
 
 export default function RootLayout({
@@ -34,14 +35,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <head />
-      <body 
+      <body
         className={`${sora.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}
         suppressHydrationWarning={true}
       >
         <Navbar />
-        <main className="flex-grow"> {/* Removed container and mx-auto */}
+        <main className="flex-grow">
           {children}
         </main>
         <Footer />

@@ -15,26 +15,26 @@ export function HeroSection() {
         <div className="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
           <div className="flex flex-col justify-center space-y-6">
             <AnimatedOnScroll animation="fadeInUp">
-              <div className="mb-3">
-                <div className="w-10 h-0.5 bg-primary mb-1"></div>
-                <p className="text-sm font-semibold text-primary uppercase tracking-wider">
-                  CAPÍTULO 01: Bienvenida
-                </p>
+              <div> {/* Wrapper div added here */}
+                <div className="mb-3">
+                  <div className="w-10 h-0.5 bg-primary mb-1"></div>
+                  <p className="text-sm font-semibold text-primary uppercase tracking-wider">
+                    CAPÍTULO 01: Bienvenida
+                  </p>
+                </div>
+                <h1 className="text-4xl font-bold tracking-tighter font-sora sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight">
+                  IA para eCommerce. <br />Simple. Poderosa.
+                </h1>
               </div>
-              <h1 className="text-4xl font-bold tracking-tighter font-sora sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight">
-                IA para eCommerce. <br />Simple. Poderosa.
-              </h1>
             </AnimatedOnScroll>
             <AnimatedOnScroll animation="fadeInUp" delay={200}>
               <p className="max-w-[600px] text-neutral-200 md:text-xl lg:text-lg xl:text-xl">
-                En Copælot, transformamos tu negocio con Inteligencia Artificial, sin complejidad.
-                <br />
-                Tu primera solución, sin costo inicial.
+                En Copælot, transformamos tu negocio con Inteligencia Artificial, sin complejidad.<br />Tu primera solución, sin costo inicial.
               </p>
             </AnimatedOnScroll>
             <AnimatedOnScroll animation="fadeInUp" delay={400}>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <div className="flex flex-col sm:flex-row">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transform hover:scale-105 transition-transform duration-300 mb-3 sm:mb-0 sm:mr-3">
                   <Link href="/ai-agent">CHAT LEO IA</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10 hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300 bg-transparent hover:border-primary">
