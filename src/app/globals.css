@@ -4,6 +4,48 @@
 
 @layer base {
   :root {
+    --background: 0 0% 98%; /* White Mist #F9F9F9 */
+    --foreground: 229 61% 30%; /* Tech Blue #1E2A78 */
+    
+    --card: 0 0% 100%; /* White #FFFFFF */
+    --card-foreground: 229 61% 30%; /* Tech Blue */
+    
+    --popover: 0 0% 100%; /* White #FFFFFF */
+    --popover-foreground: 229 61% 30%; /* Tech Blue */
+    
+    --primary: 48 100% 50%; /* Maize Yellow #FFCE00 */
+    --primary-foreground: 0 0% 0%; /* Black Ink #000000 */
+    
+    --secondary: 210 17% 93%; /* Light Gray #E9ECEF */
+    --secondary-foreground: 229 61% 30%; /* Tech Blue */
+    
+    --muted: 210 17% 96%; /* Very Light Gray #F3F4F6 */
+    --muted-foreground: 210 9% 45%; /* Medium Gray #6A7178 */
+    
+    --accent: 48 100% 50%; /* Maize Yellow #FFCE00 - for hovers, interactions */
+    --accent-foreground: 0 0% 0%; /* Black Ink #000000 - text on accent */
+    
+    --destructive: 0 84% 60%; /* Brighter Red #F85C5C */
+    --destructive-foreground: 0 0% 98%; /* White Mist #F9F9F9 */
+    
+    --border: 210 14% 89%; /* Light Gray #DDE1E6 */
+    --input: 210 14% 83%; /* Input Border Light Gray #CCD1D9 */
+    --ring: 48 100% 50%; /* Maize Yellow #FFCE00 for focus rings */
+    
+    --radius: 0.5rem;
+
+    /* Font variables (to be defined in layout.tsx) */
+    /* --font-sora: 'Sora', sans-serif; */
+    /* --font-inter: 'Inter', sans-serif; */
+
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  .dark {
     --background: 229 61% 30%; /* Tech Blue #1E2A78 */
     --foreground: 0 0% 98%; /* White Mist #F9F9F9 */
     
@@ -29,47 +71,14 @@
     --destructive-foreground: 0 0% 98%; /* White Mist */
     
     --border: 213 9% 40%; /* Darker Pilot Gray for borders */
-    --input: 213 9% 38%; /* Slightly darker than border for input background */
+    --input: 213 9% 38%; /* Slightly darker than border for input background/border */
     --ring: 48 100% 50%; /* Maize Yellow for focus rings */
-    
-    --radius: 0.5rem;
 
-    /* Font variables (to be defined in layout.tsx) */
-    /* --font-sora: 'Sora', sans-serif; */
-    /* --font-inter: 'Inter', sans-serif; */
-
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    /* Chart colors can be redefined for dark mode if needed, or inherit from :root */
+    /* For example:
+    --chart-1: 220 70% 60%; 
+    */
   }
-
-  /* The .dark class can be used if a theme switcher is implemented. */
-  /* For now, :root defaults to the dark theme. */
-  /* If you want to ensure .dark explicitly uses these:
-  .dark {
-    --background: 229 61% 30%;
-    --foreground: 0 0% 98%;
-    --card: 229 61% 35%;
-    --card-foreground: 0 0% 98%;
-    --popover: 229 61% 25%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 48 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 213 9% 67%;
-    --secondary-foreground: 0 0% 0%;
-    --muted: 213 9% 50%;
-    --muted-foreground: 213 9% 75%;
-    --accent: 48 100% 50%;
-    --accent-foreground: 0 0% 0%;
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 213 9% 40%;
-    --input: 213 9% 38%;
-    --ring: 48 100% 50%;
-  }
-  */
 }
 
 @layer base {
