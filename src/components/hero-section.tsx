@@ -6,12 +6,12 @@ import AnimatedOnScroll from '@/components/utils/animated-on-scroll';
 
 export function HeroSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[hsl(229_61%_30%)] relative overflow-hidden">
+    <section className="w-full py-8 md:py-12 lg:py-16 xl:py-24 bg-[hsl(229_61%_30%)] relative overflow-hidden">
       {/* Decorative gradient blobs for modern degrade effect */}
       <div className="absolute top-[-20%] left-[-25%] w-3/5 h-3/5 bg-orange-500/30 rounded-full filter blur-3xl opacity-50 animate-pulse"></div>
       <div className="absolute bottom-[-20%] right-[-25%] w-3/5 h-4/5 bg-indigo-400/25 rounded-full filter blur-3xl opacity-60 animate-pulse animation-delay-2000"></div>
 
-      <div className="container px-[5%] relative z-10"> {/* Updated padding here */}
+      <div className="container px-[5%] relative z-10">
         <div className="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
           <div className="flex flex-col justify-center space-y-6">
             <AnimatedOnScroll animation="fadeInUp">
