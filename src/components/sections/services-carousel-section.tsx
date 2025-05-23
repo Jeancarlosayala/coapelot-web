@@ -41,11 +41,11 @@ const features = [
 
 export function ServicesCarouselSection() {
   return (
-    <section className="py-16 md:py-24 bg-background overflow-hidden"> {/* Added overflow-hidden to section if needed */}
+    <section className="py-16 md:py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="md:grid md:grid-cols-12 md:gap-8 lg:gap-12 items-start">
-          {/* Left Static Column (Desktop) */}
-          <div className="md:col-span-4 lg:col-span-4 xl:col-span-3 md:sticky md:top-28 lg:md:top-32 h-fit self-start mb-10 md:mb-0"> {/* Adjusted top sticky value */}
+          {/* Left Sticky Column */}
+          <div className="md:col-span-4 lg:col-span-4 xl:col-span-3 md:sticky md:top-28 lg:top-32 h-fit self-start mb-10 md:mb-0">
             <AnimatedOnScroll animation="fadeInLeft" className="text-center md:text-left">
               <div className="inline-block md:block mb-3">
                 <div className="w-10 h-0.5 bg-primary mb-1 mx-auto md:mx-0"></div>
@@ -69,11 +69,11 @@ export function ServicesCarouselSection() {
 
             {/* Cards Horizontal Scroll Container */}
             <AnimatedOnScroll animation="fadeInUp" delay={200}>
-              <div className="flex overflow-x-auto space-x-6 sm:space-x-8 md:space-x-8 lg:space-x-10 pb-8 pt-2 scrollbar-hide snap-x snap-mandatory items-stretch -mx-4 px-4 md:-mx-6 md:px-6"> {/* Negative margin + padding trick for full-bleed scroll on mobile */}
+              <div className="flex overflow-x-auto space-x-6 sm:space-x-8 md:space-x-8 lg:space-x-10 pb-8 pt-2 scrollbar-hide snap-x snap-mandatory items-stretch -mx-4 px-4 md:-mx-6 md:px-6">
                 {features.map((feature, index) => (
                   <div 
                     key={feature.title} 
-                    className="flex-none snap-center w-[85%] sm:w-[70%] md:w-[46%] lg:w-[40%]" // Adjusted card widths
+                    className="flex-none snap-center w-[85%] sm:w-[70%] md:w-[calc(50%-theme(spacing.3))] lg:w-[calc(33.333%-theme(spacing.4))]"
                   >
                     <AnimatedOnScroll animation="scaleUp" delay={index * 100} className="h-full">
                       <Card className="h-full flex flex-col hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 border-border hover:border-primary/50">
