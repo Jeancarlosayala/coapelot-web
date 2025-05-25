@@ -44,17 +44,38 @@ export function HeroSection() {
             </AnimatedOnScroll>
           </div>
           <AnimatedOnScroll animation="zoomIn" delay={300} className="flex justify-center items-center">
-            <div className="relative w-full max-w-md lg:max-w-xl aspect-square rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 bg-background/10 dark:bg-background/30 backdrop-blur-sm">
-              <Image
-                src="https://placehold.co/600x600.png"
-                alt="Animación de Robot IA conectando logos de aplicaciones"
-                width={600}
-                height={600}
-                className="object-cover w-full h-full"
-                data-ai-hint="robot technology network"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+            <div className="relative w-full max-w-md lg:max-w-xl aspect-square rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 bg-background/10 dark:bg-background/30 backdrop-blur-sm p-4">
+              {/*
+                ************************************************************************************************************************************
+                *** PASTE YOUR LARGE SVG CODE HERE ***
+                Replace the placeholder <svg> below with your actual robot SVG.
+                Ensure your SVG has appropriate width, height, and viewBox attributes to scale correctly within this container.
+                You might need to adjust the parent div's padding or aspect ratio depending on your SVG's intrinsic dimensions.
+                ************************************************************************************************************************************
+              */}
+              <svg 
+                width="100%" 
+                height="100%" 
+                viewBox="0 0 200 200" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="object-contain w-full h-full"
+                aria-labelledby="heroSvgTitle"
+                role="img"
+              >
+                <title id="heroSvgTitle">Placeholder for Robot SVG</title>
+                <rect width="200" height="200" fill="hsl(var(--muted) / 0.3)" rx="10" />
+                <circle cx="100" cy="70" r="30" fill="hsl(var(--primary))" />
+                <rect x="70" y="110" width="60" height="70" rx="10" fill="hsl(var(--primary) / 0.8)" />
+                <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="hsl(var(--foreground))" fontSize="16" fontFamily="sans-serif">
+                  Your Robot SVG Here
+                </text>
+              </svg>
+              {/*
+                ************************************************************************************************************************************
+                *** END OF SVG PASTE AREA ***
+                ************************************************************************************************************************************
+              */}
+              {/* The visual conceptual text can be removed or adjusted if your SVG includes it or makes it redundant */}
               <div className="absolute bottom-4 left-4 text-xs text-white/70 p-2 bg-black/50 rounded">
                 Visualización conceptual: Robot IA orquestando soluciones.
               </div>
