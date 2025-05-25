@@ -15,7 +15,7 @@ export function HeroSection() {
         <div className="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
           <div className="flex flex-col justify-center space-y-6">
             <AnimatedOnScroll animation="fadeInUp">
-              <div> {/* Wrapper div added here */}
+              <div>
                 <div className="mb-3">
                   <div className="w-10 h-0.5 bg-primary mb-1"></div>
                   <p className="text-sm font-semibold text-primary uppercase tracking-wider">
@@ -44,41 +44,27 @@ export function HeroSection() {
             </AnimatedOnScroll>
           </div>
           <AnimatedOnScroll animation="zoomIn" delay={300} className="flex justify-center items-center">
-            <div className="relative w-full max-w-md lg:max-w-xl aspect-square rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 bg-background/10 dark:bg-background/30 backdrop-blur-sm p-4">
-              {/*
-                ************************************************************************************************************************************
-                *** PASTE YOUR LARGE SVG CODE HERE ***
-                Replace the placeholder <svg> below with your actual robot SVG.
-                Ensure your SVG has appropriate width, height, and viewBox attributes to scale correctly within this container.
-                You might need to adjust the parent div's padding or aspect ratio depending on your SVG's intrinsic dimensions.
-                ************************************************************************************************************************************
-              */}
-              <svg 
-                width="100%" 
-                height="100%" 
-                viewBox="0 0 200 200" 
-                xmlns="http://www.w3.org/2000/svg"
-                className="object-contain w-full h-full"
-                aria-labelledby="heroSvgTitle"
-                role="img"
+            <div className="relative w-full max-w-md lg:max-w-xl aspect-square rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 bg-background/10 dark:bg-background/30 backdrop-blur-sm p-2">
+              {/* Video Player */}
+              <video
+                src="/placeholder-video.mp4" // IMPORTANT: Replace with your video path, e.g., /videos/your-hero-video.mp4
+                className="w-full h-full object-cover rounded-md" // Fills container, covers, and rounds corners
+                autoPlay
+                loop
+                muted
+                playsInline // Important for iOS and inline playback
+                data-ai-hint="abstract technology animation" // Optional: hint for AI if you generate video later
               >
-                <title id="heroSvgTitle">Placeholder for Robot SVG</title>
-                <rect width="200" height="200" fill="hsl(var(--muted) / 0.3)" rx="10" />
-                <circle cx="100" cy="70" r="30" fill="hsl(var(--primary))" />
-                <rect x="70" y="110" width="60" height="70" rx="10" fill="hsl(var(--primary) / 0.8)" />
-                <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="hsl(var(--foreground))" fontSize="16" fontFamily="sans-serif">
-                  Your Robot SVG Here
-                </text>
-              </svg>
-              {/*
-                ************************************************************************************************************************************
-                *** END OF SVG PASTE AREA ***
-                ************************************************************************************************************************************
-              */}
-              {/* The visual conceptual text can be removed or adjusted if your SVG includes it or makes it redundant */}
+                Tu navegador no soporta la etiqueta de video.
+              </video>
+              {/* Optional: Add an overlay div here if you want text or a gradient over the video */}
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div> */}
+              {/* Example text overlay (adjust styling as needed) */}
+              {/* 
               <div className="absolute bottom-4 left-4 text-xs text-white/70 p-2 bg-black/50 rounded">
                 Visualización conceptual: Robot IA orquestando soluciones.
               </div>
+              */}
             </div>
           </AnimatedOnScroll>
         </div>
