@@ -2,6 +2,7 @@
 import { HeroSection } from '@/components/hero-section';
 import { OurValuesSection } from '@/components/sections/our-values-section';
 import { ServicesCarouselSection } from '@/components/sections/services-carousel-section'; 
+import { KeyResultsSection } from '@/components/sections/key-results-section'; // Import the new section
 import { Button } from '@/components/ui/button';
 import AnimatedOnScroll from '@/components/utils/animated-on-scroll';
 import Link from 'next/link';
@@ -13,15 +14,14 @@ export default function HomePage() {
       <OurValuesSection />
       <ServicesCarouselSection />
 
-      <section className="py-10 md:py-12 bg-muted"> {/* Reduced padding and changed background */}
+      <section className="py-10 md:py-12 bg-muted">
         <div className="container mx-auto px-4 md:px-6">
-          {/* Removed grid and image, content is now centered */}
-          <AnimatedOnScroll animation="fadeInUp" className="flex flex-col items-center text-center"> {/* Centering classes and new animation */}
+          <AnimatedOnScroll animation="fadeInUp" className="flex flex-col items-center text-center">
             <h2 className="text-3xl md:text-4xl font-sora font-bold mb-6">Diagnóstico IA Estratégico <span className="text-primary">(GRATUITO)</span></h2>
-            <p className="text-lg text-muted-foreground mb-6 max-w-2xl"> {/* max-w added for better readability when centered */}
+            <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
               ¿No sabes por dónde empezar? Nuestro diagnóstico IA gratuito te ayudará a identificar las oportunidades más impactantes para tu eCommerce. Habla con Leo IA y recibe un plan de acción personalizado.
             </p>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl"> {/* max-w added */}
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
               Es el primer paso ideal, sin compromiso, para entender cómo la IA puede impulsar tu crecimiento.
             </p>
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -30,6 +30,8 @@ export default function HomePage() {
           </AnimatedOnScroll>
         </div>
       </section>
+
+      <KeyResultsSection /> {/* Add the new section here */}
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6 text-center">
