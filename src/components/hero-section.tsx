@@ -44,15 +44,15 @@ export function HeroSection() {
             </AnimatedOnScroll>
           </div>
           <AnimatedOnScroll animation="zoomIn" delay={300} className="flex justify-center items-center">
-            <div className="relative w-full max-w-md lg:max-w-xl aspect-square rounded-xl overflow-hidden shadow-2xl border-2 border-primary/30 bg-background/10 dark:bg-background/30 backdrop-blur-sm p-2">
-              {/* Video Player */}
+            {/* Video container: Removed max-width, aspect-square, shadows, borders, padding, and specific backgrounds */}
+            <div className="relative w-full h-full rounded-xl overflow-hidden">
               <video
-                src="/copaelot.mp4" // Updated video source
-                className="w-full h-full object-cover rounded-md"
+                src="/copaelot.mp4"
+                className="w-full h-full object-cover rounded-md" // object-cover will fill, potentially cropping
                 autoPlay
                 loop
                 muted
-                playsInline // Important for iOS and inline playback
+                playsInline
                 data-ai-hint="abstract technology animation"
               >
                 Tu navegador no soporta la etiqueta de video.
