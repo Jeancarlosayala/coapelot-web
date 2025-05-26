@@ -21,7 +21,7 @@ const keyResultsData: KeyResultItem[] = [
     statistic: "80%",
     title: "Elevated Satisfaction (CSAT)",
     description: "of clients with positive experiences via AI chatbots.",
-    axolotlImageUrl: "https://placehold.co/120x130.png", // Replace with actual path
+    axolotlImageUrl: "/csat_aijolot.png", // Updated image
     imageHint: "axolotl star achievement",
     imageSide: "left",
   },
@@ -30,7 +30,7 @@ const keyResultsData: KeyResultItem[] = [
     statistic: "65%",
     title: "Effective Resolution",
     description: "of support tickets resolved on first contact by Generative AI.",
-    axolotlImageUrl: "https://placehold.co/120x130.png", // Replace with actual path
+    axolotlImageUrl: "/support_aijolot.png", // Updated image
     imageHint: "axolotl headset support",
     imageSide: "right",
   },
@@ -39,7 +39,7 @@ const keyResultsData: KeyResultItem[] = [
     statistic: "+28%",
     title: "Enhanced Conversion",
     description: "average increase in conversion rate.",
-    axolotlImageUrl: "https://placehold.co/120x130.png", // Replace with actual path
+    axolotlImageUrl: "/conversion_aijolot.png", // Updated image
     imageHint: "axolotl money growth",
     imageSide: "left",
   },
@@ -48,7 +48,7 @@ const keyResultsData: KeyResultItem[] = [
     statistic: "-23%",
     title: "Optimized Costs",
     description: "average reduction in operational costs.",
-    axolotlImageUrl: "https://placehold.co/120x130.png", // Replace with actual path
+    axolotlImageUrl: "/cost_aijolot.png", // Updated image
     imageHint: "axolotl chart finance",
     imageSide: "right",
   },
@@ -103,7 +103,7 @@ export function KeyResultsSection() {
                 <Image
                   src={item.axolotlImageUrl}
                   alt={item.title} // More descriptive alt text
-                  width={130} // Slightly increased size
+                  width={130} 
                   height={130}
                   className="object-contain h-auto max-w-[100px] sm:max-w-[120px] md:max-w-full"
                   data-ai-hint={item.imageHint}
