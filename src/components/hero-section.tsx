@@ -12,8 +12,10 @@ export function HeroSection() {
       <div className="absolute bottom-[-20%] right-[-25%] w-3/5 h-4/5 bg-indigo-400/25 rounded-full filter blur-3xl opacity-60 animate-pulse animation-delay-2000"></div>
 
       <div className="container px-[5%] relative z-10">
-        <div className="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
-          <div className="flex flex-col justify-center space-y-6">
+        {/* Updated grid: stacks on mobile, 40/60 split on lg screens */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-x-12 lg:gap-y-8 items-center">
+          {/* Text Content Column - spans 2/5 on lg screens */}
+          <div className="flex flex-col justify-center space-y-6 lg:col-span-2">
             <AnimatedOnScroll animation="fadeInUp">
               <div>
                 <div className="mb-3">
@@ -43,12 +45,17 @@ export function HeroSection() {
               </div>
             </AnimatedOnScroll>
           </div>
-          <AnimatedOnScroll animation="zoomIn" delay={300} className="flex justify-center items-center">
-            {/* Video container: Removed max-width, aspect-square, shadows, borders, padding, and specific backgrounds */}
+
+          {/* Video Column - spans 3/5 on lg screens */}
+          <AnimatedOnScroll 
+            animation="zoomIn" 
+            delay={300} 
+            className="lg:col-span-3 flex justify-center items-center w-full h-full"
+          >
             <div className="relative w-full h-full rounded-xl overflow-hidden">
               <video
                 src="/copaelot.mp4"
-                className="w-full h-full object-cover rounded-md" // object-cover will fill, potentially cropping
+                className="w-full h-full object-cover rounded-md"
                 autoPlay
                 loop
                 muted
@@ -57,14 +64,6 @@ export function HeroSection() {
               >
                 Tu navegador no soporta la etiqueta de video.
               </video>
-              {/* Optional: Add an overlay div here if you want text or a gradient over the video */}
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div> */}
-              {/* Example text overlay (adjust styling as needed) */}
-              {/* 
-              <div className="absolute bottom-4 left-4 text-xs text-white/70 p-2 bg-black/50 rounded">
-                Visualización conceptual: Robot IA orquestando soluciones.
-              </div>
-              */}
             </div>
           </AnimatedOnScroll>
         </div>
