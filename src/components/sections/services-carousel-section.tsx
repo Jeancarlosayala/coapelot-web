@@ -21,7 +21,7 @@ const features = [
   },
   {
     icon: <TrendingUp className="w-10 h-10 text-primary" />,
-    title: "Crecimiento en Copaelot",
+    title: "Crecimiento con Aijolot",
     description: "Mejora tu ROAS, optimiza el UX/UI, Transforma tu canal en un producto con nuevas ideas de funcionalidades.",
     link: "/services#crecimiento-copaelot" // Ensure this ID matches an ID on the services page if you want direct linking
   },

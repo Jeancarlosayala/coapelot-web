@@ -78,7 +78,7 @@ export function KeyResultsSection() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
         >
-          Resultados Reales con IA Copælot
+          Resultados Reales con Aijolot
         </motion.h2>
 
         <div className="space-y-10 md:space-y-16 max-w-4xl mx-auto">

@@ -30,7 +30,7 @@ export function OurValuesSection() {
                   </p>
                 </div>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-sora font-bold text-foreground leading-tight">
-                  Copælot: Desatamos los <span className="text-primary">AI Super Powers</span> de tu Equipo
+                  Aijolot: Desatamos los <span className="text-primary">AI Super Powers</span> de tu Equipo
                 </h2>
               </div>
             </AnimatedOnScroll>

@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+  /* Todas tus variables CSS para el tema claro */
   :root {
     --background: 0 0% 98%; /* White Mist #F9F9F9 */
     --foreground: 229 61% 30%; /* Tech Blue #1E2A78 */
@@ -45,6 +46,7 @@
     --chart-5: 340 75% 55%;
   }
 
+  /* Todas tus variables CSS para el tema oscuro */
   .dark {
     --background: 229 61% 30%; /* Tech Blue #1E2A78 */
     --foreground: 0 0% 98%; /* White Mist #F9F9F9 */
@@ -79,9 +81,8 @@
     --chart-1: 220 70% 60%; 
     */
   }
-}
 
-@layer base {
+  /* Todos tus estilos base HTML y animaciones personalizados */
   * {
     @apply border-border;
   }
@@ -104,5 +105,38 @@
   }
   .container {
     @apply px-4 md:px-6;
+  }
+
+  /* Animaciones */
+  @keyframes pulse-light {
+    0%, 100% {
+      opacity: 0.5; /* Opacidad base para los nodos que no brillan tan fuerte */
+      filter: brightness(100%); /* Brillo normal */
+      box-shadow: 0 0 5px #28C7F0, 0 0 10px #28C7F0, 0 0 15px #28C7F0 inset; /* Resplandor sutil */
+    }
+    50% {
+      opacity: 1; /* Opacidad máxima cuando brilla */
+      filter: brightness(200%); /* Más brillo */
+      box-shadow: 0 0 10px #28C7F0, 0 0 20px #28C7F0, 0 0 30px #28C7F0 inset; /* Resplandor más intenso */
+    }
+  }
+
+  @keyframes fade-in-line {
+    0% {
+      stroke-dasharray: 0 1000;
+      opacity: 0;
+    }
+    100% {
+      stroke-dasharray: 1000 0;
+      opacity: 1;
+    }
+  }
+
+  .animate-pulse-light {
+    animation: pulse-light 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-in-line {
+    animation: fade-in-line 1.5s ease-out forwards;
   }
 }
