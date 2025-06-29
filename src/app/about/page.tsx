@@ -23,7 +23,7 @@ export default function AboutUsPage() {
     <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
       <AnimatedOnScroll animation="fadeInUp">
         <header className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl md:text-5xl font-sora font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Arquitectos de Simplicidad Detrás de tus AI Super Powers
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
@@ -45,11 +45,11 @@ export default function AboutUsPage() {
         </AnimatedOnScroll>
         <AnimatedOnScroll animation="fadeInRight" className="space-y-6">
           <div>
-            <h2 className="text-3xl font-sora font-semibold flex items-center mb-3"><Target className="w-8 h-8 mr-3 text-primary"/>Nuestra Misión</h2>
+            <h2 className="text-3xl font-semibold flex items-center mb-3"><Target className="w-8 h-8 mr-3 text-primary"/>Nuestra Misión</h2>
             <p className="text-lg text-muted-foreground">Simplificar la Inteligencia Artificial para potenciar cada aspecto de tu eCommerce, transformando desafíos en ventajas competitivas y crecimiento sostenible.</p>
           </div>
           <div>
-            <h2 className="text-3xl font-sora font-semibold flex items-center mb-3"><Eye className="w-8 h-8 mr-3 text-primary"/>Nuestra Visión</h2>
+            <h2 className="text-3xl font-semibold flex items-center mb-3"><Eye className="w-8 h-8 mr-3 text-primary"/>Nuestra Visión</h2>
             <p className="text-lg text-muted-foreground">Ser los aliados estratégicos que convierten la IA en tu mayor ventaja competitiva, impulsando la innovación y el éxito en el dinámico mundo del comercio electrónico.</p>
           </div>
         </AnimatedOnScroll>
@@ -57,7 +57,7 @@ export default function AboutUsPage() {
 
       <AnimatedOnScroll animation="fadeInUp">
         <section className="mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-sora font-bold text-center mb-10">Nuestros Valores Fundamentales</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Nuestros Valores Fundamentales</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <AnimatedOnScroll key={value.title} animation="fadeInUp" delay={index * 100}>
@@ -66,7 +66,7 @@ export default function AboutUsPage() {
                     <div className="p-3 rounded-full bg-primary/10 mb-3 inline-block">
                       {value.icon}
                     </div>
-                    <CardTitle className="font-sora text-xl">{value.title}</CardTitle>
+                    <CardTitle className="text-xl">{value.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">{value.description}</p>
@@ -82,7 +82,7 @@ export default function AboutUsPage() {
         <section className="py-12 bg-card rounded-lg shadow-xl border-primary/30 mb-12 md:mb-16">
           <div className="container mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-3xl font-sora font-bold mb-6 flex items-center"><Users className="w-10 h-10 mr-4 text-primary"/>El Equipo Aijolot</h2>
+              <h2 className="text-3xl font-bold mb-6 flex items-center"><Users className="w-10 h-10 mr-4 text-primary"/>El Equipo Aijolot</h2>
               <p className="text-lg text-muted-foreground mb-4">
                 Somos un colectivo de estrategas, ingenieros de IA, diseñadores UX y expertos en eCommerce. Nuestra filosofía se centra en la agilidad, la colaboración estrecha con nuestros clientes y una obsesión por entregar soluciones que no solo funcionen, sino que inspiren.
               </p>
@@ -106,7 +106,7 @@ export default function AboutUsPage() {
 
       <AnimatedOnScroll animation="fadeInUp">
         <section className="text-center">
-          <h2 className="text-3xl md:text-4xl font-sora font-bold mb-6">¿Por Qué Elegir Aijolot?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Por Qué Elegir Aijolot?</h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Nuestro enfoque único combina expertise técnico profundo con una comprensión real de los desafíos del eCommerce. El modelo de "construcción gratuita y pago por resultados", junto con nuestra metodología IDEALS (Innovación, Datos, Estrategia, Acción, Logros, Simplicidad), nos diferencia. Te ofrecemos IA sin riesgo, con un impacto garantizado.
           </p>

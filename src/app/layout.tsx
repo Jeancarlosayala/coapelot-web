@@ -1,16 +1,16 @@
 
 import type {Metadata} from 'next';
-import { Sora, Inter } from 'next/font/google';
+import { Space_Grotesk, Inter } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
 import { SmoothScrollProvider } from '@/components/smooth-scroll-provider';
 
-const sora = Sora({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-sora',
-  weight: ['300', '400', '600', '700'],
+  variable: '--font-space-grotesk',
+  weight: ['300', '400', '500', '700'],
   display: 'swap',
 });
 
@@ -39,7 +39,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <head />
       <body
-        className={`${sora.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}
+        className={`${spaceGrotesk.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}
         suppressHydrationWarning={true}
       >
         <SmoothScrollProvider>

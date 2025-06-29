@@ -6,7 +6,7 @@
   /* Todas tus variables CSS para el tema claro */
   :root {
     --background: 0 0% 98%; /* White Mist #F9F9F9 */
-    --foreground: 229 61% 30%; /* Tech Blue #1E2A78 */
+    --foreground: 210 100% 17%; /* #003057 */
     
     --card: 0 0% 100%; /* White #FFFFFF */
     --card-foreground: 229 61% 30%; /* Tech Blue */
@@ -14,7 +14,7 @@
     --popover: 0 0% 100%; /* White #FFFFFF */
     --popover-foreground: 229 61% 30%; /* Tech Blue */
     
-    --primary: 48 100% 50%; /* Maize Yellow #FFCE00 */
+    --primary: 193 87% 55%; /* #28C7F0 */
     --primary-foreground: 0 0% 0%; /* Black Ink #000000 */
     
     --secondary: 210 17% 93%; /* Light Gray #E9ECEF */
@@ -23,7 +23,7 @@
     --muted: 210 17% 96%; /* Very Light Gray #F3F4F6 */
     --muted-foreground: 210 9% 45%; /* Medium Gray #6A7178 */
     
-    --accent: 48 100% 50%; /* Maize Yellow #FFCE00 - for hovers, interactions */
+    --accent: 193 87% 55%; /* #28C7F0 - for hovers, interactions */
     --accent-foreground: 0 0% 0%; /* Black Ink #000000 - text on accent */
     
     --destructive: 0 84% 60%; /* Brighter Red #F85C5C */
@@ -31,7 +31,7 @@
     
     --border: 210 14% 89%; /* Light Gray #DDE1E6 */
     --input: 210 14% 83%; /* Input Border Light Gray #CCD1D9 */
-    --ring: 48 100% 50%; /* Maize Yellow #FFCE00 for focus rings */
+    --ring: 193 87% 55%; /* #28C7F0 for focus rings */
     
     --radius: 0.5rem;
 
@@ -57,7 +57,7 @@
     --popover: 229 61% 25%; /* Darker for popovers */
     --popover-foreground: 0 0% 98%; /* White Mist */
     
-    --primary: 48 100% 50%; /* Maize Yellow #FFCE00 */
+    --primary: 193 87% 55%; /* #28C7F0 */
     --primary-foreground: 0 0% 0%; /* Black Ink #000000 */
     
     --secondary: 213 9% 67%; /* Pilot Gray #A3A8B0 */
@@ -66,7 +66,7 @@
     --muted: 213 9% 50%; /* Darker Pilot Gray */
     --muted-foreground: 213 9% 75%; /* Lighter Pilot Gray for muted text */
     
-    --accent: 48 100% 50%; /* Maize Yellow */
+    --accent: 193 87% 55%; /* #28C7F0 */
     --accent-foreground: 0 0% 0%; /* Black Ink */
     
     --destructive: 0 72% 51%; /* A standard red */
@@ -74,7 +74,7 @@
     
     --border: 213 9% 40%; /* Darker Pilot Gray for borders */
     --input: 213 9% 38%; /* Slightly darker than border for input background/border */
-    --ring: 48 100% 50%; /* Maize Yellow for focus rings */
+    --ring: 193 87% 55%; /* #28C7F0 for focus rings */
 
     /* Chart colors can be redefined for dark mode if needed, or inherit from :root */
     /* For example:
@@ -94,7 +94,7 @@
     flex-direction: column;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sora), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: var(--font-space-grotesk), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     @apply font-semibold tracking-tight text-foreground;
   }
   main {

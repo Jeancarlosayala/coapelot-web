@@ -90,46 +90,45 @@ export function HeroSection() {
 
       {/* Decorative gradient blobs for modern degrade effect */}
       {/* Mantienen un z-index más alto para que queden por encima del SVG de fondo */}
-      <div className="absolute top-[-20%] left-[-25%] w-3/5 h-3/5 bg-orange-500/30 rounded-full filter blur-3xl opacity-50 animate-pulse z-10"></div>
+      <div className="absolute top-[-20%] left-[-25%] w-3/5 h-3/5 bg-primary/30 rounded-full filter blur-3xl opacity-50 animate-pulse z-10"></div>
       <div className="absolute bottom-[-20%] right-[-25%] w-3/5 h-4/5 bg-indigo-400/25 rounded-full filter blur-3xl opacity-60 animate-pulse animation-delay-2000 z-10"></div>
 
       <div className="container px-[5%] relative z-20">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-x-12 lg:gap-y-8 items-center">
-          <div className="flex flex-col justify-center space-y-6 lg:col-span-2">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-x-16 items-center">
+          <div className="flex flex-col justify-center space-y-6">
             <AnimatedOnScroll animation="fadeInUp">
               <div>
                 <div className="mb-3">
                   <div className="w-10 h-0.5 bg-primary mb-1"></div>
                   <p className="text-sm font-semibold text-primary uppercase tracking-wider">
-                    CAPÍTULO 01: Bienvenida
+                  Aijolot AI Solutions
                   </p>
                 </div>
-                <h1 className="text-4xl font-bold tracking-tighter font-sora sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight">
-                  IA Superpowers. <br />Desbloquea el Potencial
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight">
+                ¿Tu empresa opera con<br />todo su potencial?
                 </h1>
               </div>
             </AnimatedOnScroll>
             <AnimatedOnScroll animation="fadeInUp" delay={200}>
               <p className="max-w-[600px] text-neutral-200 md:text-xl lg:text-lg xl:text-xl">
-                En Aijolot, transformamos tu negocio con Inteligencia Artificial, sin complejidad.
+              Desbloquea tus AI Superpowers y transforma procesos manuales en una ventaja competitiva imparable.
               </p>
             </AnimatedOnScroll>
             <AnimatedOnScroll animation="fadeInUp" delay={400}>
               <div className="flex flex-col sm:flex-row">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transform hover:scale-105 transition-transform duration-300 mb-3 sm:mb-0 sm:mr-3">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transform hover:scale-105 transition-transform duration-300 mb-3 sm:mb-0 sm:mr-3">
                   <Link href="/ai-agent">CHAT AIJOLOT</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10 hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300 bg-transparent hover:border-primary">
+                <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10 hover:text-primary transform hover:scale-105 transition-transform duration-300 bg-transparent hover:border-primary">
                   <Link href="/contact">AGENDAR MEET</Link>
                 </Button>
               </div>
             </AnimatedOnScroll>
           </div>
-
           <AnimatedOnScroll 
             animation="zoomIn" 
             delay={300} 
-            className="lg:col-span-3 flex justify-center items-center w-full h-full"
+            className="flex justify-center items-center w-full h-full"
           >
             <div className="relative w-full h-full rounded-xl overflow-hidden">
               <Image
@@ -137,7 +136,7 @@ export function HeroSection() {
                 alt="Equipo Aijolot colaborando" 
                 width={600} 
                 height={400}
-                className="rounded-lg shadow-xl object-cover"
+                className="rounded-lg object-cover"
               />
             </div>
           </AnimatedOnScroll>

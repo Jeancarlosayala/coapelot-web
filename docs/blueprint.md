@@ -17,6 +17,7 @@
 - Primary Text Color: Black Ink (#000000) for primary typography and contrast.
 - Mist White: White Mist (#F9F9F9) for light backgrounds or separators.
 - Accent color: Maize Yellow (#FFCE00) for vibrant accents and buttons.
+- Accent color: #28C7F0 for vibrant accents and buttons.
 - Primary font: Sora for headers, providing a modern and sleek look.
 - Secondary font: Inter for body text, ensuring readability and a clean design.
 - Scroll-triggered animations for elements fading, sliding, and scaling into view as the user scrolls.
