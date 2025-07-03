@@ -1,5 +1,6 @@
 
 import { HeroSection } from '@/components/hero-section';
+import { PainPointsSection } from "@/components/sections/pain-points-section";
 import { OurValuesSection } from '@/components/sections/our-values-section';
 import { ServicesCarouselSection } from '@/components/sections/services-carousel-section'; 
 import { KeyResultsSection } from '@/components/sections/key-results-section'; // Import the new section
@@ -11,6 +12,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <PainPointsSection />
       <OurValuesSection />
       <ServicesCarouselSection />
 

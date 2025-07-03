@@ -115,13 +115,24 @@ export function HeroSection() {
               </p>
             </AnimatedOnScroll>
             <AnimatedOnScroll animation="fadeInUp" delay={400}>
-              <div className="flex flex-col sm:flex-row">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transform hover:scale-105 transition-transform duration-300 mb-3 sm:mb-0 sm:mr-3">
-                  <Link href="/ai-agent">CHAT AIJOLOT</Link>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
+                <Button asChild size="lg" className="rounded-lg text-base font-bold transition-transform hover:scale-105 h-14 px-8 bg-cyan-400 text-blue-900 shine-button">
+                  <Link href="#diagnostico">
+                      Iniciar Diagnóstico GRATIS
+                  </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10 hover:text-primary transform hover:scale-105 transition-transform duration-300 bg-transparent hover:border-primary">
-                  <Link href="/contact">AGENDAR MEET</Link>
+                {/* INICIO DE MODIFICACIÓN DEL SEGUNDO BOTÓN */}
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  size="lg" 
+                  className="rounded-lg text-base font-bold transition-transform hover:scale-105 h-14 px-8 border-2 border-primary bg-transparent hover:bg-transparent text-primary"
+                >
+                  <Link href="#contacto">
+                      Agendar una Demo
+                  </Link>
                 </Button>
+                {/* FIN DE MODIFICACIÓN DEL SEGUNDO BOTÓN */}
               </div>
             </AnimatedOnScroll>
           </div>
