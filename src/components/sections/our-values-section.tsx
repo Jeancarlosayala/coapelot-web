@@ -7,11 +7,11 @@ interface ValueItem {
 }
 
 const valuesData: ValueItem[] = [
-  { title: "Innovación Constante", description: "Siempre la mejor forma. Aplicamos IA de vanguardia para transformar tu negocio." },
-  { title: "Eficiencia sin Sacrificios", description: "Potenciamos a tu equipo. La IA libera talento para la estrategia y creatividad." },
-  { title: "Claridad y Simplicidad", description: "IA compleja, soluciones simples. Traducimos tecnología en herramientas prácticas y accesibles." },
-  { title: "Impacto Tangible", description: "Resultados medibles. Ventas, ahorros, satisfacción. La IA debe generar impacto real." },
-  { title: "Colaboración Activa", description: "Somos tus aliados. Co-creamos soluciones IA perfectamente adaptadas a tu realidad." },
+  { title: "Innovación Constante", description: "Aplicamos IA de vanguardia para transformar tu negocio, buscando siempre la mejor y más nueva forma de hacer las cosas." },
+  { title: "Eficiencia sin Sacrificios", description: "Potenciamos a tu equipo, no lo reemplazamos. La IA libera su talento para la estrategia y la creatividad." },
+  { title: "Claridad y Simplicidad", description: "IA compleja, soluciones simples. Traducimos la tecnología en herramientas prácticas y accesibles para todos." },
+  { title: "Impacto Tangible", description: "Resultados medibles: más ventas, mayores ahorros, mejor satisfacción. La IA debe generar un impacto real y visible." },
+  { title: "Colaboración Activa", description: "Somos tus aliados estratégicos. Co-creamos soluciones de IA perfectamente adaptadas a la realidad de tu negocio." },
 ];
 
 export function OurValuesSection() {
@@ -26,11 +26,11 @@ export function OurValuesSection() {
                 <div className="mb-3">
                   <div className="w-10 h-0.5 bg-primary mb-1"></div>
                   <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                    CAPÍTULO 02: Nuestros Diferenciales
+                    CAPÍTULO 03: NUESTROS DIFERENCIALES
                   </p>
                 </div>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-sora font-bold text-foreground leading-tight">
-                  Aijolot: Desatamos los <span className="text-primary">AI Super Powers</span> de tu Equipo
+                  Desatamos los <span className="text-primary">AI Super Powers</span> de tu Equipo
                 </h2>
               </div>
             </AnimatedOnScroll>
@@ -40,16 +40,16 @@ export function OurValuesSection() {
           <div className="space-y-10 md:space-y-12">
             <AnimatedOnScroll animation="fadeInUp">
               <p className="text-[1.625rem] leading-relaxed text-muted-foreground">
-                Más que IA, una nueva forma de trabajar. Nuestros valores definen cada solución:
+                Más que IA, es una nueva forma de trabajar. Nuestros valores definen cada solución que creamos:
               </p>
             </AnimatedOnScroll>
             
-            <div className="space-y-16"> {/* Changed from space-y-8 to space-y-16 */}
+            <div className="space-y-16">
               {valuesData.map((value, index) => (
                 <AnimatedOnScroll 
                   key={value.title} 
                   animation="fadeInUp" 
-                  delay={100 + index * 150} // Staggered delay
+                  delay={100 + index * 150}
                 >
                   <div>
                     <h3 className="text-2xl font-sora font-semibold text-foreground mb-2">{value.title}</h3>

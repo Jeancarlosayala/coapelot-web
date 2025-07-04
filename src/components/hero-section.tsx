@@ -101,7 +101,7 @@ export function HeroSection() {
                 <div className="mb-3">
                   <div className="w-10 h-0.5 bg-primary mb-1"></div>
                   <p className="text-sm font-semibold text-primary uppercase tracking-wider">
-                  Aijolot AI Solutions
+                  CAPITULO 1: Aijolot AI Solutions
                   </p>
                 </div>
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight">

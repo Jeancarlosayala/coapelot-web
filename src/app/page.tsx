@@ -1,9 +1,12 @@
 
+// src/app/page.tsx
+
 import { HeroSection } from '@/components/hero-section';
-import { PainPointsSection } from "@/components/sections/pain-points-section";
+import { PainPointsSection } from '@/components/sections/pain-points-section';
 import { OurValuesSection } from '@/components/sections/our-values-section';
-import { ServicesCarouselSection } from '@/components/sections/services-carousel-section'; 
-import { KeyResultsSection } from '@/components/sections/key-results-section'; // Import the new section
+import { ServicesCarouselSection } from '@/components/sections/services-carousel-section';
+import { TechStackSection } from '@/components/sections/tech-stack-section'; // Importa la nueva sección
+import { KeyResultsSection } from '@/components/sections/key-results-section';
 import { Button } from '@/components/ui/button';
 import AnimatedOnScroll from '@/components/utils/animated-on-scroll';
 import Link from 'next/link';
@@ -15,6 +18,7 @@ export default function HomePage() {
       <PainPointsSection />
       <OurValuesSection />
       <ServicesCarouselSection />
+      <TechStackSection /> {/* Nueva sección añadida aquí */}
 
       <section className="py-10 md:py-12 bg-muted">
         <div className="container mx-auto px-4 md:px-6">
@@ -33,7 +37,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <KeyResultsSection /> {/* Add the new section here */}
+      <KeyResultsSection />
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6 text-center">

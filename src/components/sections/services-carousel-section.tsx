@@ -1,106 +1,136 @@
+// src/components/sections/services-carousel-section.tsx
 
 'use client';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import AnimatedOnScroll from '@/components/utils/animated-on-scroll';
-import { ArrowRight, Bot, BrainCircuit, Lightbulb, Zap, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
+import { ShoppingCart, Share2, Package, TrendingUp } from 'lucide-react'; // Importar iconos necesarios
 
-const features = [
+const agenticSolutions = [
   {
-    icon: <Bot className="w-10 h-10 text-primary" />,
-    title: "Agentes IA Avanzados",
-    description: "Automatiza ventas y mejora la experiencia del cliente con IA conversacional.",
-    link: "/services#agentes-ia"
+    id: "agentic-commerce",
+    icon: <ShoppingCart className="w-6 h-6 text-primary" />,
+    title: "Agentic Commerce",
+    description: "Transforma la experiencia de compra y venta con agentes que entienden, asisten y convierten.",
+    benefits: [
+      "Personal Shopper IA que guía al usuario en su compra.",
+      "Automatización de pedidos B2B y procesos de cotización complejos.",
+      "Buscador inteligente y filtros de categoría basados en lenguaje natural (prompts).",
+      "Resolución de preguntas y objeciones en tiempo real en la página de producto.",
+    ],
+    // Añadido para el botón
+    ctaText: "Más sobre Agentic Commerce",
+    ctaLink: "/services#agentes-ia", // Enlace a la página de servicios o al diagnóstico
   },
   {
-    icon: <BrainCircuit className="w-10 h-10 text-primary" />,
-    title: "Inteligencia de Negocio",
-    description: "Toma decisiones estratégicas basadas en datos con análisis predictivos y dashboards IA.",
-    link: "/services#inteligencia-negocio"
+    id: "agentic-marketing",
+    icon: <Share2 className="w-6 h-6 text-primary" />,
+    title: "Agentic Marketing",
+    description: "Automatiza y optimiza tu estrategia de marketing para un alcance y una eficiencia sin precedentes.",
+    benefits: [
+      "Agentes que optimizan campañas de medios y ajustan presupuestos en tiempo real.",
+      "Generación de contenido orgánico para redes sociales y blogs alineado a tendencias.",
+      "Optimización SEO continua de tu sitio analizando a la competencia.",
+      "Captación, cualificación y seguimiento automático de leads.",
+    ],
+    // Añadido para el botón
+    ctaText: "Más sobre Agentic Marketing",
+    ctaLink: "/services#inteligencia-negocio", // Enlace a la página de servicios o al diagnóstico
   },
   {
-    icon: <TrendingUp className="w-10 h-10 text-primary" />,
-    title: "Crecimiento con Aijolot",
-    description: "Mejora tu ROAS, optimiza el UX/UI, Transforma tu canal en un producto con nuevas ideas de funcionalidades.",
-    link: "/services#crecimiento-copaelot" // Ensure this ID matches an ID on the services page if you want direct linking
+    id: "agentic-product",
+    icon: <Package className="w-6 h-6 text-primary" />,
+    title: "Agentic Product",
+    description: "Mejora continua de tu producto digital basada en datos y experimentación automatizada.",
+    benefits: [
+      "Análisis de cuellos de botella y problemas de performance en tu sitio.",
+      "Elaboración de roadmaps de producto y priorización de mejoras.",
+      "Diseño y ejecución de experimentos A/B para optimizar la conversión.",
+      "Creación de definiciones de funcionalidades y gestión de backlogs.",
+    ],
+    // Añadido para el botón
+    ctaText: "Más sobre Agentic Product",
+    ctaLink: "/services#contenido-inteligente", // Enlace a la página de servicios o al diagnóstico
   },
   {
-    icon: <Zap className="w-10 h-10 text-primary" />,
-    title: "Contenido Inteligente",
-    description: "Genera contenido personalizado y optimizado para SEO con GenAI, impulsando tu alcance.",
-    link: "/services#contenido-inteligente"
+    id: "agentic-analytics-ops",
+    icon: <TrendingUp className="w-6 h-6 text-primary" />,
+    title: "Agentic Analytics & Ops",
+    description: "Inteligencia y automatización para el corazón de tu negocio: tus datos y operaciones.",
+    benefits: [
+      "Análisis e interpretación de datos de negocio en tiempo real.",
+      "Mejoras en la gestión de inventarios y predicción de demanda.",
+      "Automatización de procesos: compra de guías, cobranza, ajustes de precios.",
+      "Optimización de cualquier proceso interno que necesite tu empresa.",
+    ],
+    // Añadido para el botón
+    ctaText: "Más sobre Analytics & Ops",
+    ctaLink: "/services#optimizacion-crecimiento", // Enlace a la página de servicios o al diagnóstico
   },
-  {
-    icon: <Lightbulb className="w-10 h-10 text-primary" />,
-    title: "Innovación a Medida",
-    description: "Desarrollamos soluciones IA únicas para tus desafíos específicos de eCommerce.",
-    link: "/services#innovacion-ia"
-  }
 ];
 
 export function ServicesCarouselSection() {
+  const duplicatedLogos = [...agenticSolutions, ...agenticSolutions];
+
   return (
-    <section className="py-16 md:py-24 bg-background"> {/* Removed overflow-hidden */}
-      <div className="container mx-auto px-4 md:px-6">
-        {/* Two-column grid for sticky left text and scrolling right content */}
+    <section id="soluciones-ia" className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="md:grid md:grid-cols-12 md:gap-8 lg:gap-12 items-start">
-          {/* Left Sticky Column */}
           <div className="md:col-span-4 lg:col-span-4 xl:col-span-3 md:sticky md:top-28 lg:top-32 h-fit self-start mb-10 md:mb-0">
             <AnimatedOnScroll animation="fadeInLeft" className="text-center md:text-left">
               <div className="inline-block md:block mb-3">
                 <div className="w-10 h-0.5 bg-primary mb-1 mx-auto md:mx-0"></div>
                 <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                  CAPÍTULO 03: Nuestros Servicios
+                  CAPÍTULO 04: Soluciones IA
                 </p>
               </div>
               <h2 className="text-3xl md:text-4xl font-sora font-bold mb-4">
-                Transforma tu eCommerce con IA
+                Soluciones IA de Próxima Generación
               </h2>
             </AnimatedOnScroll>
           </div>
 
-          {/* Right Scrolling Column */}
           <div className="md:col-span-8 lg:col-span-8 xl:col-span-9">
-            {/* Spacer for desktop parallax effect */}
-            <div className="hidden md:block h-80" /> {/* 20rem spacer */}
+            <div className="hidden md:block h-80" />
 
             <AnimatedOnScroll animation="fadeInUp" className="text-center md:text-left">
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto md:mx-0 mb-12">
-                Descubre cómo nuestras soluciones de inteligencia artificial pueden revolucionar tu negocio, optimizar procesos y crear experiencias de cliente inolvidables.
+                Orquestamos agentes de IA especializados que colaboran para ejecutar tareas complejas y potenciar cada área de tu negocio.
               </p>
             </AnimatedOnScroll>
             
-            {/* Card Carousel - NOW INSIDE THE RIGHT SCROLLING COLUMN */}
-            <AnimatedOnScroll animation="fadeInUp" delay={200}>
-              <div className="flex overflow-x-auto space-x-6 sm:space-x-8 md:space-x-8 lg:space-x-10 pb-8 pt-2 scrollbar-hide snap-x snap-mandatory items-stretch -mx-4 px-4 md:-mx-6 md:px-6">
-                {features.map((feature, index) => (
-                  <div 
-                    key={feature.title} 
-                    className="flex-none snap-center w-[85%] sm:w-[70%] md:w-[46%] lg:w-[40%]"
-                  >
-                    <AnimatedOnScroll animation="scaleUp" delay={index * 100} className="h-full">
-                      <Card className="h-full flex flex-col hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 border-border hover:border-primary/50">
-                        <CardHeader className="items-center text-center">
-                          <div className="p-3 rounded-full bg-primary/10 mb-4">
-                            {feature.icon}
-                          </div>
-                          <CardTitle className="font-sora text-xl">{feature.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-grow text-center">
-                          <CardDescription>{feature.description}</CardDescription>
-                        </CardContent>
-                        <div className="p-6 pt-0 text-center">
-                            <Button variant="link" asChild className="text-primary hover:text-primary/80">
-                              <Link href={feature.link}>Saber más <ArrowRight className="ml-2 h-4 w-4"/></Link>
-                            </Button>
+            <div className="space-y-12 max-w-4xl mx-auto">
+              {agenticSolutions.map((solution, index) => (
+                <AnimatedOnScroll key={solution.id} animation="fadeInUp" delay={index * 100}>
+                  <div className="grid md:grid-cols-3 gap-8 items-start">
+                    <div className="md:col-span-1">
+                      <div className="flex items-center gap-3 mb-4 md:mb-0">
+                        <div className="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+                          {solution.icon}
                         </div>
-                      </Card>
-                    </AnimatedOnScroll>
+                        <h3 className="text-2xl font-sora font-bold">{solution.title}</h3>
+                      </div>
+                    </div>
+                    <div className="md:col-span-2">
+                      <p className="text-foreground/90 mb-4">{solution.description}</p>
+                      <ul className="space-y-2 text-muted-foreground checklist">
+                        {solution.benefits.map((benefit, bIndex) => (
+                          <li key={bIndex}>{benefit}</li>
+                        ))}
+                      </ul>
+                      {/* INICIO DE CAMBIO: Botón primario añadido */}
+                      <Button asChild className="mt-6 bg-primary hover:bg-primary/90 text-primary-foreground">
+                        <Link href={solution.ctaLink}>{solution.ctaText}</Link>
+                      </Button>
+                      {/* FIN DE CAMBIO */}
+                    </div>
                   </div>
-                ))}
-              </div>
-            </AnimatedOnScroll>
+                  {index < agenticSolutions.length - 1 && (
+                    <div className="border-b border-border my-6 md:my-10"></div>
+                  )}
+                </AnimatedOnScroll>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+// src/components/layout/nav-links.ts
 export type NavLinkItem = {
   href: string;
   label: string;
@@ -12,14 +13,14 @@ export type NavLinkGroup = {
 
 export const navLinks: NavLinkGroup[] = [
   { href: '/', label: 'Inicio' },
-  { href: '/services', label: 'Servicios IA' },
+  { href: '/#soluciones-ia', label: 'Servicios IA' }, // CAMBIO: Apunta al ID de la sección
   {
     label: 'Acerca de',
     isDropdown: true,
     subLinks: [
       { href: '/about', label: 'Nosotros' },
       { href: '/contact', label: 'Contacto' },
-      { href: '/blog', label: 'Recursos' }, // Changed from "Recursos/Blog" to "Recursos" for dropdown
+      { href: '/blog', label: 'Recursos' },
     ],
   },
 ];
