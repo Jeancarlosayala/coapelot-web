@@ -58,7 +58,7 @@ export default function AgenticCommercePage() {
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
                 <Button asChild size="lg" className="rounded-lg text-base font-bold transition-transform hover:scale-105 h-14 px-8 bg-cyan-400 text-blue-900 shine-button">
                   <Link href="#contacto">
-                    Solicitar Demo Personalizada
+                    Solicitar una demostración
                   </Link>
                 </Button>
               </div>
@@ -66,11 +66,11 @@ export default function AgenticCommercePage() {
           </div>
           <AnimatedOnScroll animation="zoomIn" delay={300} className="flex justify-center items-center">
             <Image
-              src="/aijolot_hero.png"
+              src="/Manual de Marca Copaelot-64-hero_commerce.png"
               alt="Ilustración de un agente IA asistiendo en una compra online"
-              width={500}
-              height={400}
-              className="w-full max-w-sm drop-shadow-[0_20px_50px_rgba(40,199,240,0.4)] rounded-lg"
+              width={1530}
+              height={1360}
+              className="w-full max-w-2xl drop-shadow-[0_20px_50px_rgba(40,199,240,0.4)] rounded-lg"
             />
           </AnimatedOnScroll>
         </div>
@@ -182,7 +182,7 @@ export default function AgenticCommercePage() {
               <AnimatedOnScroll animation="fadeInUp" delay={100}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner1.png"
+                    src="/Manual de Marca Copaelot-65-problem_banner3.png"
                     alt="Carritos abandonados en eCommerce"
                     width={400}
                     height={150}
@@ -200,7 +200,7 @@ export default function AgenticCommercePage() {
               <AnimatedOnScroll animation="fadeInUp" delay={200}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner2.png"
+                    src="/Manual de Marca Copaelot-66-problem_banner3.png"
                     alt="Baja conversión en tienda online"
                     width={400}
                     height={150}
@@ -218,7 +218,7 @@ export default function AgenticCommercePage() {
               <AnimatedOnScroll animation="fadeInUp" delay={300}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner3.png"
+                    src="/Manual de Marca Copaelot-67-problem_banner3.png"
                     alt="Clientes que no regresan"
                     width={400}
                     height={150}
@@ -286,11 +286,11 @@ export default function AgenticCommercePage() {
               </div>
               <AnimatedOnScroll animation="zoomIn" delay={200} className="flex justify-center">
                 <Image
-                  src="/aijolot_hero.png"
+                  src="/Manual de Marca Copaelot-64-hero_commerce.png"
                   alt="Diagrama de flujo de Agentic Commerce"
-                  width={500}
-                  height={400}
-                  className="rounded-lg shadow-2xl w-full max-w-md"
+                  width={719}
+                  height={575}
+                  className="rounded-lg w-full max-w-xl bg-transparent"
                 />
               </AnimatedOnScroll>
             </div>
@@ -355,27 +355,22 @@ export default function AgenticCommercePage() {
               </AnimatedOnScroll>
             </div>
             <AnimatedOnScroll animation="fadeInUp" delay={200}>
-              <div className="relative w-full overflow-hidden py-8">
-                <div className="flex w-fit animate-marquee-horizontal">
+              <div className="relative w-full py-8">
+                <div className="flex justify-center items-center gap-12">
                   {[
-                    { src: "/shopify-logo.png", alt: "Shopify", hint: "shopify ecommerce platform" },
-                    { src: "/woocommerce-logo.png", alt: "WooCommerce", hint: "woocommerce wordpress plugin" },
-                    { src: "/magento-logo.png", alt: "Magento", hint: "magento ecommerce platform" },
-                    { src: "/stripe-logo.png", alt: "Stripe", hint: "stripe payment processor" },
-                    { src: "/paypal-logo.png", alt: "PayPal", hint: "paypal payment service" },
-                    { src: "/shopify-logo.png", alt: "Shopify", hint: "shopify ecommerce platform" },
-                    { src: "/woocommerce-logo.png", alt: "WooCommerce", hint: "woocommerce wordpress plugin" },
-                    { src: "/magento-logo.png", alt: "Magento", hint: "magento ecommerce platform" },
-                    { src: "/stripe-logo.png", alt: "Stripe", hint: "stripe payment processor" },
-                    { src: "/paypal-logo.png", alt: "PayPal", hint: "paypal payment service" }
+                    { src: "/salesforce_logo.png", alt: "Salesforce", hint: "salesforce crm platform" },
+                    { src: "/shopify_logo.png", alt: "Shopify", hint: "shopify ecommerce platform" },
+                    { src: "/vtex_logo.png", alt: "VTEX", hint: "vtex ecommerce platform" },
+                    { src: "/bigcommerce_logo.png", alt: "BigCommerce", hint: "bigcommerce ecommerce platform" },
+                    { src: "/mercadolibre_logo.png", alt: "MercadoLibre", hint: "mercadolibre marketplace platform" }
                   ].map((integration, index) => (
                     <Image
                       key={index}
                       src={integration.src}
                       alt={integration.alt}
-                      width={120}
-                      height={60}
-                      className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all mx-8 flex-shrink-0 h-12 w-auto object-contain"
+                      width={140}
+                      height={70}
+                      className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all h-14 w-auto object-contain flex-shrink-0"
                       data-ai-hint={integration.hint}
                     />
                   ))}

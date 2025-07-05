@@ -66,11 +66,11 @@ export default function AgenticMarketingPage() {
           </div>
           <AnimatedOnScroll animation="zoomIn" delay={300} className="flex justify-center items-center">
             <Image
-              src="/aijolot_hero.png"
+              src="/hero_marketing.png"
               alt="Ilustración de un agente IA gestionando campañas de marketing"
-              width={500}
-              height={400}
-              className="w-full max-w-sm drop-shadow-[0_20px_50px_rgba(40,199,240,0.4)] rounded-lg"
+              width={850}
+              height={680}
+              className="w-full max-w-2xl drop-shadow-[0_20px_50px_rgba(40,199,240,0.4)] rounded-lg"
             />
           </AnimatedOnScroll>
         </div>
@@ -182,7 +182,7 @@ export default function AgenticMarketingPage() {
               <AnimatedOnScroll animation="fadeInUp" delay={100}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner1.png"
+                    src="/Manual de Marca Copaelot-66-problem_banner3.png"
                     alt="ROAS estancado en campañas"
                     width={400}
                     height={150}
@@ -200,7 +200,7 @@ export default function AgenticMarketingPage() {
               <AnimatedOnScroll animation="fadeInUp" delay={200}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner2.png"
+                    src="/problem_banner69.png"
                     alt="Contenido lento y costoso"
                     width={400}
                     height={150}
@@ -218,7 +218,7 @@ export default function AgenticMarketingPage() {
               <AnimatedOnScroll animation="fadeInUp" delay={300}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner3.png"
+                    src="/problem_banner70.png"
                     alt="Leads de baja calidad"
                     width={400}
                     height={150}
@@ -278,11 +278,11 @@ export default function AgenticMarketingPage() {
               </div>
               <AnimatedOnScroll animation="zoomIn" delay={200} className="flex justify-center">
                 <Image
-                  src="/aijolot_hero.png"
+                  src="/hero_marketing.png"
                   alt="Diagrama de flujo de Agentic Marketing"
-                  width={500}
-                  height={400}
-                  className="rounded-lg shadow-2xl w-full max-w-md"
+                  width={719}
+                  height={575}
+                  className="rounded-lg w-full max-w-xl bg-transparent"
                 />
               </AnimatedOnScroll>
             </div>
@@ -347,27 +347,27 @@ export default function AgenticMarketingPage() {
               </AnimatedOnScroll>
             </div>
             <AnimatedOnScroll animation="fadeInUp" delay={200}>
-              <div className="relative w-full overflow-hidden py-8">
-                <div className="flex w-fit animate-marquee-horizontal">
+              <div className="relative w-full py-8">
+                <div className="flex justify-center items-center gap-8 flex-wrap">
                   {[
-                    { src: "/facebook-ads-logo.png", alt: "Facebook Ads", hint: "facebook advertising platform" },
-                    { src: "/google-ads-logo.png", alt: "Google Ads", hint: "google advertising platform" },
-                    { src: "/hubspot-logo.png", alt: "HubSpot", hint: "hubspot marketing automation" },
-                    { src: "/mailchimp-logo.png", alt: "Mailchimp", hint: "mailchimp email marketing" },
-                    { src: "/instagram-logo.png", alt: "Instagram", hint: "instagram social media platform" },
-                    { src: "/facebook-ads-logo.png", alt: "Facebook Ads", hint: "facebook advertising platform" },
-                    { src: "/google-ads-logo.png", alt: "Google Ads", hint: "google advertising platform" },
-                    { src: "/hubspot-logo.png", alt: "HubSpot", hint: "hubspot marketing automation" },
-                    { src: "/mailchimp-logo.png", alt: "Mailchimp", hint: "mailchimp email marketing" },
-                    { src: "/instagram-logo.png", alt: "Instagram", hint: "instagram social media platform" }
+                    { src: "/facebook_logo.png", alt: "Facebook", hint: "facebook social media platform" },
+                    { src: "/google_ads_logo.png", alt: "Google Ads", hint: "google advertising platform" },
+                    { src: "/hootsuite_logo.png", alt: "Hootsuite", hint: "hootsuite social media management" },
+                    { src: "/hubspot_logo.png", alt: "HubSpot", hint: "hubspot marketing automation" },
+                    { src: "/instagram_logo.png", alt: "Instagram", hint: "instagram social media platform" },
+                    { src: "/klaviyo_logo.png", alt: "Klaviyo", hint: "klaviyo email marketing platform" },
+                    { src: "/messenger_logo.png", alt: "Messenger", hint: "facebook messenger platform" },
+                    { src: "/meta_ads_logo.png", alt: "Meta Ads", hint: "meta advertising platform" },
+                    { src: "/search_console_logo.png", alt: "Search Console", hint: "google search console seo" },
+                    { src: "/whatsapp_logo.png", alt: "WhatsApp", hint: "whatsapp messaging platform" }
                   ].map((integration, index) => (
                     <Image
                       key={index}
                       src={integration.src}
                       alt={integration.alt}
-                      width={120}
-                      height={60}
-                      className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all mx-8 flex-shrink-0 h-12 w-auto object-contain"
+                      width={100}
+                      height={50}
+                      className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all h-10 w-auto object-contain flex-shrink-0"
                       data-ai-hint={integration.hint}
                     />
                   ))}

@@ -21,11 +21,11 @@ const agenticSolutions = [
       "Resolución de preguntas y objeciones en tiempo real en la página de producto.",
     ],
     integrations: [
-      { src: "/shopify-logo.png", alt: "Shopify", hint: "shopify ecommerce platform" },
-      { src: "/woocommerce-logo.png", alt: "WooCommerce", hint: "woocommerce wordpress plugin" },
-      { src: "/magento-logo.png", alt: "Magento", hint: "magento ecommerce platform" },
-      { src: "/stripe-logo.png", alt: "Stripe", hint: "stripe payment processor" },
-      { src: "/paypal-logo.png", alt: "PayPal", hint: "paypal payment service" }
+      { src: "/shopify_logo.png", alt: "Shopify", hint: "shopify ecommerce platform" },
+      { src: "/bigcommerce_logo.png", alt: "Bigcommerce", hint: "bigcommerce ecommerce platform" },
+      { src: "/vtex_logo.png", alt: "vtex", hint: "vtex commerce platform" },
+      { src: "/salesforce_logo.png", alt: "Salesforce", hint: "Salesforce commerce platform" },
+      { src: "/mercadolibre_logo.png", alt: "mercadolibre", hint: "mercadolibre marketplace platform" }
     ],
     ctaText: "Más sobre Agentic Commerce",
     ctaLink: "/servicios/agentic-commerce",
@@ -42,11 +42,16 @@ const agenticSolutions = [
       "Captación, cualificación y seguimiento automático de leads.",
     ],
     integrations: [
-      { src: "/facebook-ads-logo.png", alt: "Facebook Ads", hint: "facebook advertising platform" },
-      { src: "/google-ads-logo.png", alt: "Google Ads", hint: "google advertising platform" },
-      { src: "/hubspot-logo.png", alt: "HubSpot", hint: "hubspot marketing automation" },
-      { src: "/mailchimp-logo.png", alt: "Mailchimp", hint: "mailchimp email marketing" },
-      { src: "/instagram-logo.png", alt: "Instagram", hint: "instagram social media platform" }
+      { src: "/facebook_logo.png", alt: "Facebook", hint: "facebook platform" },
+      { src: "/google_ads_logo.png", alt: "Google Ads", hint: "google advertising platform" },
+      { src: "/hubspot_logo.png", alt: "HubSpot", hint: "hubspot marketing automation" },
+      { src: "/hootsuite_logo.png", alt: "Hotsuite", hint: "hootsuite social media marketing" },
+      { src: "/instagram_logo.png", alt: "Instagram", hint: "instagram social media platform" },
+      { src: "/klaviyo_logo.png", alt: "Klaviyo", hint: "Klaviyo marketing automation" },
+      { src: "/messenger_logo.png", alt: "Messenger", hint: "Messenger social messaging" },
+      { src: "/meta_ads_logo.png", alt: "Meta ads", hint: "Meta advertising platform" },
+      { src: "/search_console_logo.png", alt: "Search Console", hint: "Search Console" },
+      { src: "/whatsapp_logo.png", alt: "WhatsApp", hint: "Whatsapp messages" }
     ],
     ctaText: "Más sobre Agentic Marketing",
     ctaLink: "/servicios/agentic-marketing",
@@ -63,11 +68,11 @@ const agenticSolutions = [
       "Creación de definiciones de funcionalidades y gestión de backlogs.",
     ],
     integrations: [
-      { src: "/jira-logo.png", alt: "Jira", hint: "jira project management tool" },
-      { src: "/github-logo.png", alt: "GitHub", hint: "github code repository" },
-      { src: "/figma-logo.png", alt: "Figma", hint: "figma design tool" },
-      { src: "/slack-logo.png", alt: "Slack", hint: "slack communication platform" },
-      { src: "/notion-logo.png", alt: "Notion", hint: "notion productivity workspace" }
+      { src: "/atlassian_logo.png", alt: "Atlassian", hint: "atlassian product management platform" },
+      { src: "/monday_logo.png", alt: "Monday.com", hint: "monday.com project management tool" },
+      { src: "/github_logo.png", alt: "GitHub", hint: "github code repository" },
+      { src: "/figma_logo.png", alt: "Figma", hint: "figma design tool" },
+      { src: "/notion_logo.png", alt: "Notion", hint: "notion productivity workspace" }
     ],
     ctaText: "Más sobre Agentic Product",
     ctaLink: "/servicios/agentic-product",
@@ -84,11 +89,15 @@ const agenticSolutions = [
       "Optimización de cualquier proceso interno que necesite tu empresa.",
     ],
     integrations: [
-      { src: "/google-analytics-logo.png", alt: "Google Analytics", hint: "google analytics platform" },
-      { src: "/tableau-logo.png", alt: "Tableau", hint: "tableau data visualization" },
-      { src: "/zapier-logo.png", alt: "Zapier", hint: "zapier automation platform" },
-      { src: "/salesforce-logo.png", alt: "Salesforce", hint: "salesforce crm platform" },
-      { src: "/excel-logo.png", alt: "Microsoft Excel", hint: "microsoft excel spreadsheet" }
+      { src: "/google_analytics_logo.png", alt: "Google Analytics", hint: "google analytics platform" },
+      { src: "/big_query_logo.png", alt: "BigQuery", hint: "BigQuery data wharehousing" },
+      { src: "/gmail_logo.png", alt: "Gmail", hint: "Gmail email platform" },
+      { src: "/salesforce_logo.png", alt: "Salesforce", hint: "salesforce crm platform" },
+      { src: "/google_calendar_logo.png", alt: "Google Calendar", hint: "Google Calendar platform" },
+      { src: "/looker_studio_logo.png", alt: "Looker Studio", hint: "Looker Studio data visualization" },
+      { src: "/odoo_logo.png", alt: "Odoo", hint: "Odoo ERP platform" },
+      { src: "/outlook_logo.png", alt: "Outlook", hint: "Outlook email platform" },
+      { src: "/sap_logo.png", alt: "Sap", hint: "Sap ERP platform" },
     ],
     ctaText: "Más sobre Analytics & Ops",
     ctaLink: "/servicios/agentic-analytics",
