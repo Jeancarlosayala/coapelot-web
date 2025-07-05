@@ -6,7 +6,7 @@ import AnimatedOnScroll from '@/components/utils/animated-on-scroll';
 
 export function HeroSection() {
   return (
-    <section className="w-full py-8 md:py-12 lg:py-16 xl:py-24 bg-[#003057] relative overflow-hidden">
+    <section className="w-full py-12 md:py-16 lg:py-20 xl:py-24 bg-[#003057] relative overflow-hidden">
       {/* BACKGROUND GENERADO CON SVG: Nodos y Conexiones */}
       <div className="absolute inset-0 z-0 opacity-25"> {/* Ajusta la opacidad global del fondo SVG */}
         <svg 
@@ -93,9 +93,9 @@ export function HeroSection() {
       <div className="absolute top-[-20%] left-[-25%] w-3/5 h-3/5 bg-primary/30 rounded-full filter blur-3xl opacity-50 animate-pulse z-10"></div>
       <div className="absolute bottom-[-20%] right-[-25%] w-3/5 h-4/5 bg-indigo-400/25 rounded-full filter blur-3xl opacity-60 animate-pulse animation-delay-2000 z-10"></div>
 
-      <div className="container px-[5%] relative z-20">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-x-16 items-center">
-          <div className="flex flex-col justify-center space-y-6">
+      <div className="container mx-auto px-[5%] relative z-20 flex items-center justify-center min-h-[80vh]">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-x-16 items-center max-w-7xl w-full">
+          <div className="flex flex-col justify-center space-y-6 text-left">
             <AnimatedOnScroll animation="fadeInUp">
               <div>
                 <div className="mb-3">
@@ -115,7 +115,7 @@ export function HeroSection() {
               </p>
             </AnimatedOnScroll>
             <AnimatedOnScroll animation="fadeInUp" delay={400}>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button asChild size="lg" className="rounded-lg text-base font-bold transition-transform hover:scale-105 h-14 px-8 bg-cyan-400 text-blue-900 shine-button">
                   <Link href="#diagnostico">
                       Iniciar Diagnóstico GRATIS
@@ -126,7 +126,7 @@ export function HeroSection() {
                   asChild 
                   variant="outline" 
                   size="lg" 
-                  className="rounded-lg text-base font-bold transition-transform hover:scale-105 h-14 px-8 border-2 border-primary bg-transparent hover:bg-transparent text-primary"
+                  className="rounded-lg text-base font-bold transition-transform hover:scale-105 h-14 px-8 border-2 border-primary bg-transparent hover:bg-transparent text-primary hover:text-primary"
                 >
                   <Link href="#contacto">
                       Agendar una Demo
@@ -141,13 +141,13 @@ export function HeroSection() {
             delay={300} 
             className="flex justify-center items-center w-full h-full"
           >
-            <div className="relative w-full h-full rounded-xl overflow-hidden">
+            <div className="relative w-full h-full rounded-xl">
               <Image
                 src="/aijolot_hero.png"
                 alt="Equipo Aijolot colaborando" 
-                width={600} 
-                height={400}
-                className="rounded-lg object-cover"
+                width={1080} 
+                height={720}
+                className="rounded-lg object-cover w-full h-auto scale-[1.62] transform"
               />
             </div>
           </AnimatedOnScroll>

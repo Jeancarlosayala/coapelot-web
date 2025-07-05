@@ -29,8 +29,8 @@ export function OurValuesSection() {
                     CAPÍTULO 03: NUESTROS DIFERENCIALES
                   </p>
                 </div>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-sora font-bold text-foreground leading-tight">
-                  Desatamos los <span className="text-primary">AI Super Powers</span> de tu Equipo
+                <h2 className="text-[60px] leading-tight font-sora font-bold text-foreground">
+                  Desatamos los <span className="text-cyan-400">AI Super Powers</span> de tu Equipo
                 </h2>
               </div>
             </AnimatedOnScroll>

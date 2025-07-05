@@ -39,7 +39,7 @@ export function PainPointsSection() {
             </p>
           </div>
           {/* FIN DE CORRECCIÓN */}
-          <h2 className="text-3xl md:text-4xl font-sora font-bold mb-4">¿Te suena familiar?</h2>
+          <h2 className="text-[60px] leading-tight font-sora font-bold mb-4">¿Te suena <span className="text-cyan-400">familiar</span>?</h2>
         </AnimatedOnScroll>
         <AnimatedOnScroll animation="fadeInUp" delay={100}>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">Tu equipo es talentoso, pero enfrenta barreras que frenan el crecimiento.</p>

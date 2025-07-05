@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { analytics } from '@/lib/analytics';
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -52,7 +53,10 @@ export function Navbar() {
                       "block py-2 text-sm transition-colors text-neutral-600 rounded-md px-3", 
                       pathname === subLink.href ? "text-primary font-semibold bg-neutral-50" : "hover:text-primary hover:bg-neutral-50"
                     )}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      analytics.trackNavigation(subLink.label, subLink.href, 'main_nav');
+                    }}
                   >
                     {subLink.label}
                   </Link>
@@ -76,7 +80,10 @@ export function Navbar() {
         key={link.href || link.label} // Use label as key if href is not present
         href={link.href!}
         className={commonLinkClasses}
-        onClick={() => setIsMobileMenuOpen(false)}
+        onClick={() => {
+          setIsMobileMenuOpen(false);
+          analytics.trackNavigation(link.label, link.href!, 'main_nav');
+        }}
       >
         {link.label}
       </Link>
@@ -158,6 +165,7 @@ export function Navbar() {
                   )}
                   onClick={() => {
                     setIsDropdownOpen(false);
+                    analytics.trackNavigation(subLink.label, subLink.href, 'main_nav');
                   }}
                 >
                   {subLink.label}
@@ -172,6 +180,7 @@ export function Navbar() {
        <Link
         href={link.href!}
         className={commonLinkClasses}
+        onClick={() => analytics.trackNavigation(link.label, link.href!, 'main_nav')}
       >
         {link.label}
       </Link>
@@ -189,14 +198,14 @@ export function Navbar() {
               <NavListItem key={link.label} link={link} />
             ))}
           </nav>
-          <LanguageSwitcher />
-          <Button asChild size="default" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+          {/* <LanguageSwitcher /> */}
+          <Button asChild size="default" className="bg-primary hover:bg-primary/90 text-primary-foreground shine-button">
             <Link href="/ai-agent">
-              CHAT AIJOLOT AI 
+              Hablar con Aijolot 
               <Image 
                 src="/chat_emoji.png" 
                 alt="Chat Emoji" 
-                width={20} 
+                width={30} 
                 height={20} 
                 className="ml-2" 
               />
@@ -205,7 +214,7 @@ export function Navbar() {
         </div>
 
         <div className="md:hidden flex items-center">
-          <Button asChild size="sm" variant="outline" className="mr-2 border-primary text-primary hover:bg-primary/10 px-2">
+          <Button asChild size="sm" variant="outline" className="mr-2 border-primary text-primary hover:bg-primary/10 px-2 shine-button">
             <Link href="/ai-agent" className="flex items-center">
               CHAT AI 
               <Image 
@@ -239,7 +248,7 @@ export function Navbar() {
                   ))}
                 </nav>
                 <div className="p-6 space-y-4 mt-auto border-t border-neutral-200">
-                  <Button asChild size="default" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <Button asChild size="default" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shine-button">
                     <Link href="/ai-agent" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-center">
                       CHAT AIJOLOT AI
                        <Image 
@@ -251,10 +260,10 @@ export function Navbar() {
                       />
                     </Link>
                   </Button>
-                  <div>
+                  {/* <div>
                     <p className="mb-2 text-xs text-neutral-600 font-medium">Idioma</p>
                     <LanguageSwitcher />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </SheetContent>

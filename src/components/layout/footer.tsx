@@ -1,6 +1,8 @@
 // src/components/layout/footer.tsx
+'use client';
 import Link from 'next/link';
 import { Separator } from '@/components/ui/separator';
+import { analytics } from '@/lib/analytics';
 
 export function Footer() {
   return (
@@ -15,15 +17,51 @@ export function Footer() {
           </div>
           <nav className="flex flex-col space-y-2 md:items-center">
             <h4 className="font-semibold text-primary-foreground">Quick Links</h4> {/* CAMBIO: Texto */}
-            <Link href="/services" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">Servicios</Link> {/* CAMBIO: Texto y hover */}
-            <Link href="/contact" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">Contacto</Link> {/* CAMBIO: Texto y hover */}
-            <Link href="/ai-agent" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">Habla con Leo IA</Link> {/* CAMBIO: Texto y hover */}
+            <Link 
+              href="/services" 
+              className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              onClick={() => analytics.trackNavigation('Servicios', '/services', 'footer')}
+            >
+              Servicios
+            </Link> {/* CAMBIO: Texto y hover */}
+            <Link 
+              href="/contact" 
+              className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              onClick={() => analytics.trackNavigation('Contacto', '/contact', 'footer')}
+            >
+              Contacto
+            </Link> {/* CAMBIO: Texto y hover */}
+            <Link 
+              href="/ai-agent" 
+              className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              onClick={() => analytics.trackNavigation('Habla con Leo IA', '/ai-agent', 'footer')}
+            >
+              Habla con Leo IA
+            </Link> {/* CAMBIO: Texto y hover */}
           </nav>
           <nav className="flex flex-col space-y-2 md:items-end">
             <h4 className="font-semibold text-primary-foreground">Legal</h4> {/* CAMBIO: Texto */}
-            <Link href="/privacy-policy" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">Política de Privacidad</Link> {/* CAMBIO: Texto y hover */}
-            <Link href="/terms-conditions" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">Términos y Condiciones</Link> {/* CAMBIO: Texto y hover */}
-            <Link href="/cookie-policy" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">Política de Cookies</Link> {/* CAMBIO: Texto y hover */}
+            <Link 
+              href="/privacy-policy" 
+              className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              onClick={() => analytics.trackNavigation('Política de Privacidad', '/privacy-policy', 'footer')}
+            >
+              Política de Privacidad
+            </Link> {/* CAMBIO: Texto y hover */}
+            <Link 
+              href="/terms-conditions" 
+              className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              onClick={() => analytics.trackNavigation('Términos y Condiciones', '/terms-conditions', 'footer')}
+            >
+              Términos y Condiciones
+            </Link> {/* CAMBIO: Texto y hover */}
+            <Link 
+              href="/cookie-policy" 
+              className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              onClick={() => analytics.trackNavigation('Política de Cookies', '/cookie-policy', 'footer')}
+            >
+              Política de Cookies
+            </Link> {/* CAMBIO: Texto y hover */}
           </nav>
         </div>
         <Separator className="my-6 bg-primary-foreground/40" /> {/* CAMBIO: Separador con opacidad */}

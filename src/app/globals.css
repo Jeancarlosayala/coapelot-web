@@ -15,7 +15,7 @@
     --popover-foreground: 229 61% 30%; /* Tech Blue */
     
     --primary: 193 87% 55%; /* #28C7F0 */
-    --primary-foreground: 0 0% 0%; /* Black Ink #000000 */
+    --primary-foreground: 220 65% 33%; /* Blue #1e3a8a - rgb(30 58 138) */
     
     --secondary: 210 17% 93%; /* Light Gray #E9ECEF */
     --secondary-foreground: 229 61% 30%; /* Tech Blue */
@@ -58,7 +58,7 @@
     --popover-foreground: 0 0% 98%; /* White Mist */
     
     --primary: 193 87% 55%; /* #28C7F0 */
-    --primary-foreground: 0 0% 0%; /* Black Ink #000000 */
+    --primary-foreground: 220 65% 33%; /* Blue #1e3a8a - rgb(30 58 138) */
     
     --secondary: 213 9% 67%; /* Pilot Gray #A3A8B0 */
     --secondary-foreground: 0 0% 0%; /* Black Ink */
@@ -224,6 +224,18 @@
     animation: marquee-horizontal 20s linear infinite; /* CAMBIO: Reducida duración a 20s para mantener una velocidad similar */
   }
 
+
+  /* Gradient background para CTA sections */
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 100%);
+  }
+
+  /* Chapter line decoration */
+  .chapter-line {
+    width: 60px;
+    height: 3px;
+    margin-bottom: 1rem;
+  }
 
   /* --- FIN DE ESTILOS PERSONALIZADOS AÑADIDOS/CONSOLIDADOS --- */
 }

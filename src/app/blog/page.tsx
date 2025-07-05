@@ -1,4 +1,4 @@
-import { BlogPostCard, type BlogPost } from '@/components/sections/blog-post-card';
+import { BlogPostCard } from '@/components/sections/blog-post-card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -6,53 +6,17 @@ import AnimatedOnScroll from '@/components/utils/animated-on-scroll';
 import { Search } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { getAllBlogPosts, getBlogCategories } from '@/lib/blog';
 
 export const metadata: Metadata = {
   title: 'Recursos y Blog IA - El Laboratorio de Leo IA',
   description: 'Insights, tendencias y guías prácticas sobre IA para eCommerce. Mantente al día con Aijolot.',
 };
 
-// Placeholder blog posts data
-const blogPosts: BlogPost[] = [
-  {
-    slug: 'ia-en-ecommerce-2024',
-    title: 'Tendencias de IA que Dominarán el eCommerce en 2024',
-    summary: 'Descubre las innovaciones en inteligencia artificial que están configuradas para transformar la forma en que vendemos online este año.',
-    imageUrl: 'https://placehold.co/600x300.png',
-    imageHint: "futuristic technology",
-    date: '15 Julio, 2024',
-    category: 'Tendencias IA',
-  },
-  {
-    slug: 'genai-para-contenido',
-    title: 'Cómo Usar GenAI para Crear Contenido Atractivo en tu Tienda',
-    summary: 'Aprende a utilizar la IA generativa para producir descripciones de producto, posts de blog y más, de forma rápida y eficiente.',
-    imageUrl: 'https://placehold.co/600x300.png',
-    imageHint: "creative writing",
-    date: '02 Julio, 2024',
-    category: 'GenAI',
-  },
-  {
-    slug: 'optimizar-conversion-con-ia',
-    title: '5 Formas de Optimizar la Tasa de Conversión con IA',
-    summary: 'Explora estrategias prácticas basadas en IA para mejorar la personalización, la experiencia de usuario y aumentar tus ventas.',
-    imageUrl: 'https://placehold.co/600x300.png',
-    imageHint: "charts growth",
-    date: '20 Junio, 2024',
-    category: 'eCommerce',
-  },
-   {
-    slug: 'chatbots-inteligentes-ecommerce',
-    title: 'Chatbots Inteligentes: Más Allá del Soporte Básico en eCommerce',
-    summary: 'Cómo los agentes IA conversacionales pueden impulsar ventas, fidelizar clientes y ofrecer una atención proactiva 24/7.',
-    imageUrl: 'https://placehold.co/600x300.png',
-    imageHint: "chatbot conversation",
-    date: '10 Junio, 2024',
-    category: 'Agentes IA',
-  },
-];
-
 export default function BlogPage() {
+  const blogPosts = getAllBlogPosts();
+  const categories = getBlogCategories();
+
   return (
     <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
       <AnimatedOnScroll animation="fadeInUp">
@@ -78,10 +42,11 @@ export default function BlogPage() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">Todas las Categorías</SelectItem>
-              <SelectItem value="tendencias-ia">Tendencias IA</SelectItem>
-              <SelectItem value="genai">GenAI</SelectItem>
-              <SelectItem value="ecommerce">eCommerce</SelectItem>
-              <SelectItem value="agentes-ia">Agentes IA</SelectItem>
+              {categories.map(category => (
+                <SelectItem key={category} value={category.toLowerCase().replace(/\s+/g, '-')}>
+                  {category}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>
@@ -90,7 +55,7 @@ export default function BlogPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {blogPosts.map((post, index) => (
-          <BlogPostCard key={post.slug} post={post} animationDelay={index * 100 + 200} />
+          <BlogPostCard key={post.slug} post={post} animationDelay={index * 100 + 200} section="blog_page" />
         ))}
       </div>
       

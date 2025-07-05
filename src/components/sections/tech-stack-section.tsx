@@ -30,7 +30,7 @@ export function TechStackSection() {
                 CAPÍTULO 05: NUESTRA TECNOLOGÍA
               </p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-sora font-bold mt-4 text-foreground">Construimos con Herramientas de Punta</h2>
+            <h2 className="text-[60px] leading-tight font-sora font-bold mt-4 text-foreground">Construimos con <span className="text-cyan-400">Herramientas</span> de Punta</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
               Utilizamos un stack tecnológico robusto y flexible para crear soluciones IA a la medida, potentes y escalables.
             </p>
