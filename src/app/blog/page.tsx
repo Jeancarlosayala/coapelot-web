@@ -22,7 +22,7 @@ export default function BlogPage() {
       <AnimatedOnScroll animation="fadeInUp">
         <header className="text-center mb-12 md:mb-16">
           <h1 className="text-4xl md:text-5xl font-sora font-bold mb-4">
-            El Laboratorio de Leo IA: Insights y Tendencias
+            El Laboratorio de Aijolot: Insights y Tendencias
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             Sumérgete en el mundo de la Inteligencia Artificial para eCommerce. Encuentra artículos, guías y las últimas novedades para potenciar tu negocio.

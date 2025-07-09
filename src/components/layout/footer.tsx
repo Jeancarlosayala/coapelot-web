@@ -12,7 +12,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-sora font-semibold text-primary-foreground">Aijolot</h3> {/* CAMBIO: Texto */}
             <p className="text-sm text-primary-foreground/80 mt-2"> {/* CAMBIO: Texto con opacidad */}
-              AI Solutions for eCommerce.
+              AI Superpowers for your company.
             </p>
           </div>
           <nav className="flex flex-col space-y-2 md:items-center">
@@ -36,7 +36,7 @@ export function Footer() {
               className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               onClick={() => analytics.trackNavigation('Habla con Leo IA', '/ai-agent', 'footer')}
             >
-              Habla con Leo IA
+              Habla con Aijolot
             </Link> {/* CAMBIO: Texto y hover */}
           </nav>
           <nav className="flex flex-col space-y-2 md:items-end">

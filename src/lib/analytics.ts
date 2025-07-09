@@ -1,4 +1,7 @@
 // Analytics utility functions for data layer events
+// Integrated with Google Tag Manager (GTM)
+
+import { GTMAnalytics } from './gtm-analytics';
 
 interface SelectContentParams {
   content_type: string;
@@ -159,6 +162,7 @@ export const analytics = {
 
   // Track service carousel clicks
   trackServiceClick: (serviceId: string, serviceTitle: string, href: string) => {
+    // Send to both legacy tracking and GTM
     trackSelectContent({
       content_type: 'service',
       content_id: serviceId,
@@ -167,6 +171,9 @@ export const analytics = {
       section: 'services_carousel',
       url: href
     });
+    
+    // Send to GTM with enhanced tracking
+    GTMAnalytics.trackServiceClick(serviceId, serviceTitle, href);
   },
 
   // Track blog card clicks

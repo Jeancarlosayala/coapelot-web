@@ -66,11 +66,11 @@ export default function AgenticAnalyticsPage() {
           </div>
           <AnimatedOnScroll animation="zoomIn" delay={300} className="flex justify-center items-center">
             <Image
-              src="/aijolot_hero.png"
+              src="/analytics_hero.png"
               alt="Ilustración de un agente IA optimizando operaciones y analizando datos"
-              width={500}
-              height={400}
-              className="w-full max-w-sm drop-shadow-[0_20px_50px_rgba(40,199,240,0.4)] rounded-lg"
+              width={850}
+              height={680}
+              className="w-full max-w-2xl drop-shadow-[0_20px_50px_rgba(40,199,240,0.4)] rounded-lg"
             />
           </AnimatedOnScroll>
         </div>
@@ -182,7 +182,7 @@ export default function AgenticAnalyticsPage() {
               <AnimatedOnScroll animation="fadeInUp" delay={100}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner1.png"
+                    src="/problem_banner2.png"
                     alt="Datos que no informan"
                     width={400}
                     height={150}
@@ -200,7 +200,7 @@ export default function AgenticAnalyticsPage() {
               <AnimatedOnScroll animation="fadeInUp" delay={200}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner2.png"
+                    src="/problem_banner3.png"
                     alt="Operaciones ineficientes"
                     width={400}
                     height={150}
@@ -218,7 +218,7 @@ export default function AgenticAnalyticsPage() {
               <AnimatedOnScroll animation="fadeInUp" delay={300}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner3.png"
+                    src="/Manual de Marca Copaelot-67-problem_banner3.png"
                     alt="Pérdida de oportunidades"
                     width={400}
                     height={150}
@@ -286,11 +286,11 @@ export default function AgenticAnalyticsPage() {
               </div>
               <AnimatedOnScroll animation="zoomIn" delay={200} className="flex justify-center">
                 <Image
-                  src="/aijolot_hero.png"
+                  src="/analytics_hero.png"
                   alt="Diagrama de flujo de Agentic Analytics & Ops"
-                  width={500}
-                  height={400}
-                  className="rounded-lg shadow-2xl w-full max-w-md"
+                  width={719}
+                  height={575}
+                  className="rounded-lg w-full max-w-xl bg-transparent"
                 />
               </AnimatedOnScroll>
             </div>

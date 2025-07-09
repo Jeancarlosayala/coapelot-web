@@ -66,11 +66,11 @@ export default function AgenticProductPage() {
           </div>
           <AnimatedOnScroll animation="zoomIn" delay={300} className="flex justify-center items-center">
             <Image
-              src="/aijolot_hero.png"
+              src="/product_hero.png"
               alt="Ilustración de un agente IA construyendo un roadmap de producto"
-              width={500}
-              height={400}
-              className="w-full max-w-sm drop-shadow-[0_20px_50px_rgba(40,199,240,0.4)] rounded-lg"
+              width={850}
+              height={680}
+              className="w-full max-w-2xl drop-shadow-[0_20px_50px_rgba(40,199,240,0.4)] rounded-lg"
             />
           </AnimatedOnScroll>
         </div>
@@ -182,7 +182,7 @@ export default function AgenticProductPage() {
               <AnimatedOnScroll animation="fadeInUp" delay={100}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner1.png"
+                    src="/product-problem_banner1.png"
                     alt="Ciclos de desarrollo eternos"
                     width={400}
                     height={150}
@@ -200,7 +200,7 @@ export default function AgenticProductPage() {
               <AnimatedOnScroll animation="fadeInUp" delay={200}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner2.png"
+                    src="/product-problem_banner2.png"
                     alt="Funcionalidades fantasma"
                     width={400}
                     height={150}
@@ -218,7 +218,7 @@ export default function AgenticProductPage() {
               <AnimatedOnScroll animation="fadeInUp" delay={300}>
                 <div className="bg-card/80 backdrop-blur-sm p-0 rounded-xl border border-border text-left overflow-hidden h-full flex flex-col">
                   <Image
-                    src="/problem_banner3.png"
+                    src="/product-problem_banner3.png"
                     alt="Retención baja de usuarios"
                     width={400}
                     height={150}
@@ -286,11 +286,11 @@ export default function AgenticProductPage() {
               </div>
               <AnimatedOnScroll animation="zoomIn" delay={200} className="flex justify-center">
                 <Image
-                  src="/aijolot_hero.png"
+                  src="/product_hero.png"
                   alt="Diagrama de flujo de Agentic Product"
-                  width={500}
-                  height={400}
-                  className="rounded-lg shadow-2xl w-full max-w-md"
+                  width={719}
+                  height={575}
+                  className="rounded-lg w-full max-w-xl bg-transparent"
                 />
               </AnimatedOnScroll>
             </div>
@@ -358,16 +358,16 @@ export default function AgenticProductPage() {
               <div className="relative w-full overflow-hidden py-8">
                 <div className="flex w-fit animate-marquee-horizontal">
                   {[
-                    { src: "/jira-logo.png", alt: "Jira", hint: "jira project management tool" },
-                    { src: "/github-logo.png", alt: "GitHub", hint: "github code repository" },
-                    { src: "/figma-logo.png", alt: "Figma", hint: "figma design tool" },
-                    { src: "/slack-logo.png", alt: "Slack", hint: "slack communication platform" },
-                    { src: "/notion-logo.png", alt: "Notion", hint: "notion productivity workspace" },
-                    { src: "/jira-logo.png", alt: "Jira", hint: "jira project management tool" },
-                    { src: "/github-logo.png", alt: "GitHub", hint: "github code repository" },
-                    { src: "/figma-logo.png", alt: "Figma", hint: "figma design tool" },
-                    { src: "/slack-logo.png", alt: "Slack", hint: "slack communication platform" },
-                    { src: "/notion-logo.png", alt: "Notion", hint: "notion productivity workspace" }
+                    { src: "/atlassian_logo.png", alt: "Atlassian", hint: "atlassian product management platform" },
+                    { src: "/monday_logo.png", alt: "Monday.com", hint: "monday.com project management tool" },
+                    { src: "/github_logo.png", alt: "GitHub", hint: "github code repository" },
+                    { src: "/figma_logo.png", alt: "Figma", hint: "figma design tool" },
+                    { src: "/notion_logo.png", alt: "Notion", hint: "notion productivity workspace" },
+                    { src: "/atlassian_logo.png", alt: "Atlassian", hint: "atlassian product management platform" },
+                    { src: "/monday_logo.png", alt: "Monday.com", hint: "monday.com project management tool" },
+                    { src: "/github_logo.png", alt: "GitHub", hint: "github code repository" },
+                    { src: "/figma_logo.png", alt: "Figma", hint: "figma design tool" },
+                    { src: "/notion_logo.png", alt: "Notion", hint: "notion productivity workspace" }
                   ].map((integration, index) => (
                     <Image
                       key={index}

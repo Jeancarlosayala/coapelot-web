@@ -6,6 +6,7 @@ import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
 import { SmoothScrollProvider } from '@/components/smooth-scroll-provider';
+import { GoogleTagManager, GoogleTagManagerNoscript } from '@/components/analytics/google-tag-manager';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -35,13 +36,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-PF9F3V9L';
+  
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <head />
+      <head>
+        {/* Google Tag Manager */}
+        <GoogleTagManager gtmId={gtmId} />
+      </head>
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}
         suppressHydrationWarning={true}
       >
+        {/* Google Tag Manager (noscript) */}
+        <GoogleTagManagerNoscript gtmId={gtmId} />
+        
         <SmoothScrollProvider>
           <Navbar />
           <main className="flex-grow">
