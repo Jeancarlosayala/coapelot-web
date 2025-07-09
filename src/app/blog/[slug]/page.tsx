@@ -8,14 +8,12 @@ import { notFound } from 'next/navigation';
 import { getBlogPostBySlug, getAllBlogPosts } from '@/lib/blog';
 import ReactMarkdown from 'react-markdown';
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = getBlogPostBySlug(params.slug);
+// No custom interface, use Next.js convention for params
+export async function generateMetadata(
+  props: any
+): Promise<Metadata> {
+  const slug = props?.params?.slug;
+  const post = getBlogPostBySlug(slug);
   if (!post) {
     return {
       title: 'Artículo no encontrado',
@@ -27,8 +25,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPostBySlug(params.slug);
+export default function BlogPostPage(props: any) {
+  const slug = props?.params?.slug;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -150,7 +149,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   );
 }
 
-// For static generation of blog post pages
 export async function generateStaticParams() {
   const posts = getAllBlogPosts();
   return posts.map((post) => ({
